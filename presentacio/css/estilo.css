@@ -1,0 +1,548 @@
+@charset "utf-8";
+
+
+/************************/
+/* Estilo VadodeYaboc   */
+/* Vadodeyaboc.com		*/
+/* 11-02-2011           */
+/************************/
+
+body {
+	margin: 			0;
+	padding:			0;
+	background-color:	white;/*#F7F7F7;*//*#A6CEEA;*/
+	/*font-family: 		"Palatino Linotype", Verdana, Arial, Helvetica, sans-serif; /*"Baskerville Old Face" */
+	font-family: 		Verdana, Arial, Helvetica, sans-serif; /*"Baskerville Old Face"*/
+	font-size: 			13px;
+	background-color: 	black;/*#301E1A;*/
+}
+
+section, article, aside, footer, header, nav, hgroup {
+       display: block;
+}
+
+p{
+	margin:				0;
+	padding:			0;
+}
+
+a{
+	text-decoration: 	none;
+	outline: 0;
+}
+
+
+.superCaja, #idSuperCaja{
+	width: 					1000px;
+	height:					635px;
+	margin:					20px auto 20px auto;
+	-moz-border-radius:		10px;
+	-webkit-border-radius: 	10px;
+	border:1px solid black;
+	
+}
+
+.divCaja, #idCaja{
+	width: 					1000px;
+	min-height:				635px;
+	margin:					0px auto 0 auto;
+	background-image:		url('../img/bg/fondo.png');
+	background-repeat:		repeat-x;
+	background-color:		white;/*#FF6600;*/
+	background-position:	0px 0px;
+	-moz-border-radius:		10px;
+	-webkit-border-radius: 	10px;
+	
+}
+
+
+/************************************************************** BASE */
+
+.divFrnjaSuperior{
+	float:	left;
+	width:	1000px;
+	height:	170px;
+	/*border-bottom:1px solid white;*/
+}
+.divLogo{
+	float:	left;
+	width:	153px;
+	height:	100px;
+	margin:	20px 0 8px 35px;
+}
+.divSubLogo{
+	float:	right;
+	width:	78px;
+	height:	104px;
+	margin:	27px 35px 0px 0px;
+	/*border-bottom:1px solid black;*/
+}
+
+.divIndice{
+	float: right;
+	height:20px;
+	margin:95px 20px 0 0;
+	padding:5px 0 0 0;
+	font-size:18px;
+	color: #FF6600;
+	text-shadow: 0 1px 1px #000;
+	/*border-bottom:1px solid black;*/
+}
+
+.divMenuSuperior{
+	float:				left;
+	height: 			30px;
+	width: 				950px;
+	margin:				5px 0 0 25px;
+	/*background-color:	transparent;*/
+	/*background-color:	#000000;*/
+	/*color:				#592D04;*/
+	color:				#FF6600;
+	font-size: 			14px;
+	border-top:			1px solid #FF6600;
+	border-bottom: 		1px solid #FF6600;
+}
+
+
+.linkMenu1Primero{
+	float:				left;
+	margin:				1px 0 0 0px;
+	padding:			5px 13px 5px 27px;
+	color:				#000000;
+	background-color:	transparent;
+	text-decoration: 	none;
+	font-weight:		normal;
+	text-shadow: 		0 1px 1px #000;
+}
+
+.linkMenu1{
+	float:				left;
+	margin:				1px 0 0 0px;
+	padding:			5px 27px 5px 27px;
+	font-weight:		normal;
+	font-size:			14px;
+	color:				#000000;
+	background-color:	transparent;
+	text-decoration: 	none;
+	text-shadow: 		0 1px 1px #000; 
+}
+
+
+.linkMenu1Primero:hover, .linkMenu1:hover, .linkMenu1Primero:focus, .linkMenu1:focus{
+	color:				#FF6600;
+	text-shadow: 		0 1px 1px #000;
+}
+
+.divCentral{
+	float:	left;
+	width:	1000px;
+	height:	465px;
+	/*border: 1px solid white;*/
+}
+
+
+/******************************************************************** CAPA TRANSPARENCIA*/
+
+.divTransparente{
+	position:absolute;
+	background-color:black;
+	-moz-border-radius:8px;
+	-webkit-border-radius: 8px;
+	filter:alpha(opacity=60);
+	-moz-opacity:.60;
+	-khtml-opacity:.60;
+	opacity:.60;
+}
+
+.capaImagen{
+	position:absolute;
+	padding: 10px 10px 10px 10px;
+	background-color: white;
+	border: 1px solid black;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	
+	box-shadow: 5px 5px 2px black;
+	-moz-box-shadow: 5px 5px 2px black;
+	-webkit-box-shadow: 5px 5px 2px black;
+}
+
+.textoPieImg{
+	float: left;
+	font-family: "Palatino Linotype", "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:black;
+	margin: 5px 0 0 0;
+}
+
+.divCierraImg{
+	float:right;
+}
+
+.divCierraImg a{
+	border:none;
+}
+.divCierraImg img{
+	border:none;
+	margin: 5px 0 0 0;
+}
+
+/*********************************************************** CAPA CONTENIDO */
+
+.divContenido{
+	float:	left;
+	height:	396px;
+	width:	920px;
+	margin:	32px 0 0 39px;
+	background-color: white;
+	border: 1px solid #AFB2A8;
+	/*-moz-border-radius:	5px;
+	-webkit-border-radius: 5px;*/
+	
+	-moz-border-radius-topleft: 5px 5px;
+	-moz-border-radius-topright: 60px 60px;
+	-moz-border-radius-bottomright: 5px 5px;
+	-moz-border-radius-bottomleft: 60px 60px;
+	
+	-webkit-border-top-left-radius: 5px 5px;
+	-webkit-border-top-right-radius: 60px 60px;
+	-webkit-border-bottom-right-radius: 5px 5px;
+	-webkit-border-bottom-left-radius: 60px 60px;
+	
+	background-image:		url('../img/bg/bgCaja1.png');
+	background-repeat: no-repeat;
+	background-position: 25px 0px;
+	font-family: "Palatino Linotype", Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+/******************************************************************** INICIO Construccion*/
+
+.pKelbertGrande{
+	width: 250px;
+	height: 60px;
+	color: white;
+	margin: 10px 0 0 30px;
+	font-size: 60px;
+	font-weight: bolder;
+}
+
+.pKelbertMini{
+	width: 250px;
+	height: 60px;
+	color: #888;
+	margin: 0px 0 0 30px;
+	font-size: 30px;
+	font-weight: normal;
+}
+
+.pKelbertConstruccion{
+	width: 250px;
+	height: 60px;
+	color: #FFF;
+	margin: 220px 0 0 30px;
+	font-size: 13px;
+	font-style: normal;
+}
+
+.pTextoIzquierda{
+	float:left;
+	width: 250px;
+	height: 60px;
+	color: #333;
+	margin: 250px 0 0 30px;
+	font-size: 16px;
+	text-align: center;
+	font-style: italic;
+}
+.pTextoInicioCentro{
+	float:left;
+	width: 875px;
+	height: 350px;
+	color: black; /*#333;*/
+	margin: 20px 0 0 30px;
+	font-size: 16px;
+	text-align: center;
+	font-style: normal;
+}
+.pTextoDerecha{
+	float: right;
+	width: 320px;
+	height: 60px;
+	color: #333;
+	margin: 260px 10px 0 0px;
+	font-size: 16px;
+	text-align: center;
+	font-style: italic;
+}
+
+.spanVerde{
+	font-style: normal;
+	font-size: 18px;
+	color: #476C26;
+	font-weight: normal;
+	text-shadow: 0 1px 2px #FFF;
+}
+
+
+/******************************************************************** CONSTRUCCION */
+
+.divConstruccion{
+	float: left;
+	width: 310px;
+	height: 55px;
+	background-image: url("../img/ico/alerta.png");
+	background-repeat: no-repeat;
+	background-position: top;
+	padding: 40px 0 0 0px;
+	margin: 60px 0px 0 305px;
+	text-align:center;
+}
+
+
+
+
+
+/******************************************************************* INICIO */
+
+#idContenidoInicio{
+	background-image: url("../img/bg/fondoK.jpg");
+	background-position: 60px 0px;
+	background-color: black;
+	padding: 10px 20px 0px 20px;
+	width:880px;
+	height:	386px;
+}
+
+
+/******************************************************************* SERVICIOS */
+
+#idContenidoServicios{
+	background-image: url("../img/bg/fondoK.jpg");
+	background-position: 60px 0px;
+	background-color: black;
+	padding: 10px 20px 0px 20px;
+	width:880px;
+	height:	386px;
+}
+
+/******************************************************************* PROMOCIONES */
+
+#idContenidoPromociones{
+	background-image: url("../img/bg/fondoK.jpg");
+	background-position: 60px 0px;
+	background-color: black;
+	padding: 10px 20px 0px 20px;
+	width:880px;
+	height:	386px;
+}
+
+/******************************************************************* CATALOGO */
+
+#idContenidoCatalogo{
+	background-image: url("../img/bg/fondoK.jpg");
+	background-position: 60px 0px;
+	background-color: black;
+	padding: 10px 20px 0px 20px;
+	width:880px;
+	height:	386px;
+}
+
+/******************************************************************* KELBERT */
+
+#idContenidoKelbert{
+	background-image: url("../img/bg/fondoK.jpg");
+	background-position: 60px 0px;
+	background-color: black;
+	padding: 10px 20px 0px 20px;
+	width:880px;
+	height:	386px;
+}
+
+
+/********************************************************************** LOCALIZACION */
+
+.divMapaLocalizacion{
+	float: left;
+	width: 600px;
+	height: 340px;
+	margin: 27px 0 0 27px;
+	/*border:1px solid #E1D8B9;*/
+}
+
+.divDatosLocalizacion{
+	float: left;
+	width: 235px;
+	height: 340px;
+	margin: 28px 0 0 25px;
+	text-align: center;
+	/*border:1px solid black;*/
+}
+
+.pTituloLocalizacion{
+	color: #990000;
+	margin: 10px 0 2px 0;
+	font-style: italic;
+	/*text-decoration:underline;*/
+	font-size: 15px;
+}
+
+.pTextoLocalizacion a{
+	color: black;
+}
+.pTextoLocalizacion a:hover{
+	text-shadow: 		0 1px 5px #555;
+}
+/******************************************************************* CONTACTO */
+
+#idContenidoContacto{
+	background-image: none;
+}
+
+.divFormularioContacto{
+	float: left;
+	width: 600px;
+	height: 340px;
+	margin: 27px 0 0 27px;
+}
+
+.divDatosLocalizacionContacto{
+	float: left;
+	width: 235px;
+	height: 340px;
+	margin: 28px 0 0 25px;
+	text-align: center;
+	/*border:1px solid black;*/
+}
+
+.divAlertaMail{
+	float: left;
+	width: 213px;
+	height: 55px;
+	margin: 35px 0 0 0;
+	padding: 20px 10px 0 10px;
+	color: #990000;
+	-moz-border-radius:	3px;
+	-webkit-border-radius: 3px;
+	
+}
+
+.divFormularioContacto p, .divColumna2Contacto p{
+	font-size: 13px;
+	text-align: justify;
+	color: #333333;
+	margin: 20px 0 0 90px;
+	/*border: 1px solid black;*/
+}
+
+.formularioContacta{
+	float:left;
+	width: 600px;
+	height: 180px;
+	margin: 30px 0 0 0;
+}
+
+.labelNombre{
+	float: left;
+	width: 80px;
+	height: 14px;
+	text-align: right;
+	margin: 20px 10px 0 0;
+	color: #990000;
+}
+
+.labelCorreo{
+	float: left;
+	width: 65px;
+	height: 14px;
+	text-align: right;
+	margin: 20px 10px 0 0;
+	color: #990000;
+}
+.labelComentario{
+	float: left;
+	width: 80px;
+	height: 14px;
+	margin: 20px 10px 0 0;
+	text-align: right;
+	color: #990000;
+}
+
+.cajaContactaNombre{
+	float: left;
+	width: 180px;
+	height: 14px;
+	margin: 20px 0 0 0;
+	padding: 1px 5px 1px 5px;
+	border: 1px solid #333;
+	font-size: 12px;
+	-moz-border-radius:	3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 5px 5px 2px black;
+	-moz-box-shadow: 5px 5px 2px #666666;
+	-webkit-box-shadow: 5px 5px 2px black;
+	font-family: "Palatino Linotype", Verdana, Arial, Helvetica, sans-serif;
+}
+.cajaContactaCorreo{
+	float: left;
+	width: 210px;
+	height: 14px;
+	margin: 20px 0 0 0;
+	padding: 1px 5px 1px 5px;
+	border: 1px solid #333;
+	font-size: 12px;
+	-moz-border-radius:	3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 5px 5px 2px black;
+	-moz-box-shadow: 5px 5px 2px #666666;
+	-webkit-box-shadow: 5px 5px 2px black;
+	font-family: "Palatino Linotype", Verdana, Arial, Helvetica, sans-serif;
+}
+.cajaContactaComentario{
+	float:left;
+	width: 480px;
+	height: 90px;
+	margin: 20px 0 0 0;
+	padding: 5px 1px 1px 5px;
+	border: 1px solid #333;
+	font-size: 12px;
+	-moz-border-radius:	3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 5px 5px 2px black;
+	-moz-box-shadow: 5px 5px 2px #666666;
+	-webkit-box-shadow: 5px 5px 2px black;
+	font-family: "Palatino Linotype", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.inputEnvia{
+	float:left;
+	width:50px;
+	height:23px;
+	margin: 3px 0 0 532px;
+	background-color: transparent;
+	border:none;
+	font-size: 15px;
+	font-weight: bold;
+	font-style: italic;
+	color: #990000;
+	font-family: "Palatino Linotype", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.inputEnvia:hover, .inputEnvia:focus{
+	text-shadow: 0 1px 2px #666666;
+	cursor: pointer;
+}
+
+/***************************************************************** TEXTO */
+.spanMayus{
+	color: #990000;
+	font-style: italic;
+	font-size: 22px;
+}
+
+.pTituloMini{
+	color: #990000;
+	margin: 10px 0 2px 0;
+	font-style: italic;
+	font-size: 15px;
+}
