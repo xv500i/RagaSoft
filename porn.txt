@@ -6,3 +6,5 @@ Feu servir l'aptana com un editor únicament i el github per anar pujant els can
 COMMIT BY EL CAP
 
 Holaaaa
+
+A Dani no li agrada GitHub, pasa-ho
