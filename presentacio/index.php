@@ -12,7 +12,7 @@
 				</div>
 				<div class="divCentral">
 					<div class="divContenido" id="idContenidoInicio">
-						<p class="pKelbertGrande">RAGASOFT</p>
+						<p class="pKelbertGrande">RAGASOFT - Ou Yeah!</p>
 						<p class="pKelbertMini">The Best Developers</p>
 						<p class="pKelbertConstruccion">We are developing...</p>
 					</div>
