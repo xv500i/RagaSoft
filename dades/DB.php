@@ -1,9 +1,9 @@
 <?php
 class DB {
 	
-	private static $user="username";
-	private static $password="password";
-	private static $database="database";
+	private static $user="Test1";
+	private static $password="S9nBpwEMvJCD5Wcx";
+	private static $database="test_rfid";
 	private static $location = localhost;
 
 	public static function executeQuery($query) {

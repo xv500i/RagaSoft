@@ -5,8 +5,7 @@ class FabricaControladorsDades {
 	private $iControladorUsuari;
 	
 	private function __construct() {
-		// init controladors
-		$iControladorUsuari = new ControladorUsuari();
+		
 	}
 	
 	public static function getInstance() {
@@ -18,7 +17,7 @@ class FabricaControladorsDades {
 	
 	public function getIControladorUsuari() {
 		if ($iControladorUsuari == NULL) {
-			//init
+			$iControladorUsuari = new ControladorUsuari();
 		}
 		return $iControladorUsuari;
 	}
