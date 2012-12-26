@@ -1,12 +1,26 @@
 <?php
-class SimpleClass
-{
-    // Declaración de la propiedad
-    public $var = 'a default value';
+class FabricaControladorsDades {
 
-    // Declaración del método
-    public function displayVar() {
-        echo $this->var;
-    }
+	private $instance;
+	private $iControladorUsuari;
+	
+	private function __construct() {
+		// init controladors
+		$iControladorUsuari = new ControladorUsuari();
+	}
+	
+	public static function getInstance() {
+		if ($instance == NULL) {
+			$instance = new FabricaControladorsDades();
+		}
+		return $instance;
+	}
+	
+	public function getIControladorUsuari() {
+		if ($iControladorUsuari == NULL) {
+			//init
+		}
+		return $iControladorUsuari;
+	}
 }
 ?>
