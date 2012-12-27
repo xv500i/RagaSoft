@@ -1,7 +1,10 @@
 <?php
+
+include_once ("ControladorUsuari.php");
+
 class FabricaControladorsDades {
 
-	private $instance;
+	private static $instance;
 	private $iControladorUsuari;
 	
 	private function __construct() {
@@ -9,17 +12,17 @@ class FabricaControladorsDades {
 	}
 	
 	public static function getInstance() {
-		if ($instance == NULL) {
-			$instance = new FabricaControladorsDades();
+		if (self::$instance == NULL) {
+			self::$instance = new FabricaControladorsDades();
 		}
-		return $instance;
+		return self::$instance;
 	}
 	
 	public function getIControladorUsuari() {
-		if ($iControladorUsuari == NULL) {
-			$iControladorUsuari = new ControladorUsuari();
+		if ($this->iControladorUsuari == NULL) {
+			$this->iControladorUsuari = new ControladorUsuari();
 		}
-		return $iControladorUsuari;
+		return $this->iControladorUsuari;
 	}
 }
 ?>

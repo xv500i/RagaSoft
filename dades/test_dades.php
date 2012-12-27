@@ -1,5 +1,7 @@
 <?php
-
+	include_once ("DB.php");
+	include_once ("FabricaControladorsDades.php");
+	/*
 	$user="alex";
 	$password="";
 	$database="test";
@@ -15,4 +17,8 @@
 		echo mysql_result($result, $i, "id") . "<br>";
 		$i++;
 	}
+	*/
+	$factory = FabricaControladorsDades::getInstance();
+	$cu = $factory->getIControladorUsuari();
+	echo var_dump($cu->existeix(10));
 ?>
