@@ -1,6 +1,7 @@
 <?php
 
 include_once (__DIR__ . "\\..\\domini\\IControladorCuidador.php");
+include_once ("DB.php");
 
 class ControladorCuidador implements IControladorCuidador {
 	

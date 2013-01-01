@@ -1,6 +1,7 @@
 <?php
 
 include_once (__DIR__ . "\\..\\domini\\IControladorContactes.php");
+include_once ("DB.php");
 
 class ControladorContactes implements IControladorContactes {
 	

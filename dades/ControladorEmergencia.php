@@ -1,6 +1,7 @@
 <?php
 
 include_once (__DIR__ . "\\..\\domini\\IControladorEmergencia.php");
+include_once ("DB.php");
 
 class ControladorEmergencia implements IControladorEmergencia {
 	
@@ -23,6 +24,30 @@ class ControladorEmergencia implements IControladorEmergencia {
 	public function tots() {
 		$result = DB::executeQuery(self::$querySelectAll);
 		// TODO: crear usuaris
+	}
+
+	public function creaIncendi($Llar) {
+		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'?2','?3','?4');";
+		$iq = str_replace("?2", "Incendi", $iq);
+		$iq = str_replace("?3", $Llar->getUsuari(), $iq);
+		$iq = str_replace("?4", "NULL", $iq);
+		DB::executeQuery($iq);
+	}
+	
+	public function creaTardanca($resident) {
+		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'?2','?3','?4');";
+		$iq = str_replace("?2", "Tardanca", $iq);
+		$iq = str_replace("?3", "NULL", $iq);
+		$iq = str_replace("?4", $resident->getUsuari(), $iq);
+		DB::executeQuery($iq);
+	}
+	
+	public function creaCaiguda($resident) {
+		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'?2','?3','?4');";
+		$iq = str_replace("?2", "Caiguda", $iq);
+		$iq = str_replace("?3", "NULL", $iq);
+		$iq = str_replace("?4", $resident->getUsuari(), $iq);
+		DB::executeQuery($iq);
 	}
 
 }
