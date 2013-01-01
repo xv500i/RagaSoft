@@ -1,11 +1,11 @@
 <?php
 
-include_once (__DIR__ . "\\..\\domini\\IControladorResident.php");
+include_once (__DIR__ . "\\..\\domini\\IControladorLlar.php");
 
-class ControladorResident implements IControladorResident {
+class ControladorLlar implements IControladorLlar {
 	
-    private static $querySelectAbstract = "SELECT * FROM RESIDENT WHERE usuari = '?1';";
-	private static $querySelectAll = "SELECT * FROM RESIDENT;";	
+    private static $querySelectAbstract = "SELECT * FROM LLAR WHERE usuari = '?1';";
+	private static $querySelectAll = "SELECT * FROM LLAR;";	
 		
     public function obte($usuari) {
     	$query = str_replace("?1", $usuari, self::$querySelectAbstract);

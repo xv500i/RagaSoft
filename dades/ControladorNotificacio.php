@@ -4,8 +4,8 @@ include_once (__DIR__ . "\\..\\domini\\IControladorNotificacio.php");
 
 class ControladorNotificacio implements IControladorNotificacio {
 	
-    private static $querySelectAbstract = "SELECT * FROM CONTACTES WHERE nom = '?1';";
-	private static $querySelectAll = "SELECT * FROM CONTACTES;";
+    private static $querySelectAbstract = "SELECT * FROM NOTIFICACIO WHERE id = '?1';";
+	private static $querySelectAll = "SELECT * FROM NOTIFICACIO;";
 		
     public function obte($id) {
     	$query = str_replace("?1", $id, self::$querySelectAbstract);
