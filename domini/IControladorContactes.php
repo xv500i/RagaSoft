@@ -1,8 +1,8 @@
 <?php
 interface IControladorContactes
 {
-    public function obte($nom);
-	public function existeix($nom);
+    public function obte($telefon);
+	public function existeix($telefon);
 	public function tots();
 }
 ?>
