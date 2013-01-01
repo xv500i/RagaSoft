@@ -1,5 +1,5 @@
 <?php
-interface IControladorUsuari
+interface IControladorNotificacio
 {
     public function obte($id);
 	public function existeix($id);

@@ -1,11 +1,11 @@
 <?php
 
-include_once (__DIR__ . "\\..\\domini\\IControladorUsuari.php");
+include_once (__DIR__ . "\\..\\domini\\IControladorNotificacio.php");
 
-class ControladorUsuari implements IControladorUsuari {
+class ControladorNotificacio implements IControladorNotificacio {
 	
-    private static $querySelectAbstract = "SELECT * FROM USUARI WHERE id = '?1';";
-	private static $querySelectAll = "SELECT * FROM USUARI;";	
+    private static $querySelectAbstract = "SELECT * FROM CONTACTES WHERE nom = '?1';";
+	private static $querySelectAll = "SELECT * FROM CONTACTES;";
 		
     public function obte($id) {
     	$query = str_replace("?1", $id, self::$querySelectAbstract);
