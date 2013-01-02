@@ -5,10 +5,10 @@ include_once (__DIR__ . "\\..\\dades\\FabricaControladorsDades.php");
 include_once ("IControladorEmergencia.php");
 include_once ("IControladorResident.php");
 
-class TxCreaCaiguda implements Transaccio {
+class TxCreaTardanca implements Transaccio {
 	
 	private $idResident;
-	private $caiguda;
+	private $tardanca;
 
 	public function execu() {
 			$ContDades = new FabricaControladorsDades();
@@ -19,8 +19,8 @@ class TxCreaCaiguda implements Transaccio {
 				throw new Exception ("residentNoExisteix");
 			} else {
 				$CtrlEmergencia = $ContDades->getIControladorEmergencia();
-				$c = $CtrlEmergencia->creaCaiguda($resident);
-				$caiguda = $c;				
+				$t = $CtrlEmergencia->creaTardanca($resident);
+				$tardanca = $t;				
 			}		
 	}
 }
