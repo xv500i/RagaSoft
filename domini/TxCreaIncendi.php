@@ -1,16 +1,17 @@
 <?php
 
-class TxCrearIncedi implements Transaccio {
+class TxCreaIncedi implements Transaccio {
 	
 	private $Incendi;
+	private $Usuari;
 
-	public function execu($usuari) {
+	public function execu() {
 			include 'dades/FabricaControladorsDades.php';
 			$ContDades = new FabricaControladorsDades();
 			$ContDades->getInstance();
 			include 'IControladorLlar.php';
 			$CtrlLlar = $ContDades->getIControladorLlar();
-			$Llar = $CtrlLlar->obte($usuari);
+			$Llar = $CtrlLlar->obte($Usuari);
 			if(is_null($Llar)) {
 				throw new Exception ("llarNoExisteix");
 			} else {
