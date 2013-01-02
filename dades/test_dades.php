@@ -29,23 +29,6 @@
 		echo "</table>";
 	}
 	
-	/*
-	$user="alex";
-	$password="";
-	$database="test";
-	$location = "localhost:3306";
-	
-	mysql_connect($location, $user, $password);
-		@mysql_select_db($database) or die ("Impossible de selecionar la base de dades");
-		$result = mysql_query("SELECT * FROM usuari");
-		mysql_close();
-	$n = mysql_num_rows($result);
-	$i = 0;
-	while ($i < $n){
-		echo mysql_result($result, $i, "id") . "<br>";
-		$i++;
-	}
-	*/
 	$factory = FabricaControladorsDades::getInstance();
 	echo "Contactes<br>";
 	$cu = $factory->getIControladorContactes();
@@ -54,6 +37,31 @@
 	
 	echo "Resident<br>";
 	$cu = $factory->getIControladorResident();
+	displayRows($cu->tots());
+	echo "<br>";
+	
+	echo "Cuidador<br>";
+	$cu = $factory->getIControladorCuidador();
+	displayRows($cu->tots());
+	echo "<br>";
+	
+	echo "Notificacio<br>";
+	$cu = $factory->getIControladorNotificacio();
+	displayRows($cu->tots());
+	echo "<br>";
+	
+	echo "Emergencia<br>";
+	$cu = $factory->getIControladorEmergencia();
+	displayRows($cu->tots());
+	echo "<br>";
+	
+	echo "Resident<br>";
+	$cu = $factory->getIControladorResident();
+	displayRows($cu->tots());
+	echo "<br>";
+	
+	echo "Llar<br>";
+	$cu = $factory->getIControladorLlar();
 	displayRows($cu->tots());
 	echo "<br>";
 ?>
