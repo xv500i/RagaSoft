@@ -24,6 +24,7 @@ class ControladorEmergencia implements IControladorEmergencia {
 	public function tots() {
 		$result = DB::executeQuery(self::$querySelectAll);
 		// TODO: crear usuaris
+		return $result;
 	}
 
 	public function creaIncendi($Llar) {

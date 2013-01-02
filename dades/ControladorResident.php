@@ -24,6 +24,7 @@ class ControladorResident implements IControladorResident {
 	public function tots() {
 		$result = DB::executeQuery(self::$querySelectAll);
 		// TODO: crear usuaris
+		return $result;
 	}
 
 }

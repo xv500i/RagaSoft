@@ -24,6 +24,7 @@ class ControladorCuidador implements IControladorCuidador {
 	public function tots() {
 		$result = DB::executeQuery(self::$querySelectAll);
 		// TODO: crear usuaris
+		return $result;
 	}
 
 }

@@ -24,6 +24,7 @@ class ControladorNotificacio implements IControladorNotificacio {
 	public function tots() {
 		$result = DB::executeQuery(self::$querySelectAll);
 		// TODO: crear usuaris
+		return $result;
 	}
 
 	public function actualitza($notificacio) {
