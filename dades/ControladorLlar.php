@@ -13,8 +13,7 @@ class ControladorLlar implements IControladorLlar {
     	$query = str_replace("?1", $usuari, self::$querySelectAbstract);
 		$result = DB::executeQuery($query);
 		$Llar = new Llar();
-		while($row = mysql_fetch_array($result))
-  		{
+		while($row = mysql_fetch_array($result)) {
   			$Llar->modificaAdreca($row['adreca']);
 			$Llar->modificaContrasenya($row['contrasenya']);
 			$Llar->modificaUsuari($row['usuari']);
@@ -32,8 +31,16 @@ class ControladorLlar implements IControladorLlar {
 	
 	public function tots() {
 		$result = DB::executeQuery(self::$querySelectAll);
-		// TODO: crear usuaris
-		return $result;
+		$arr = array();
+		while($row = mysql_fetch_array($result)) {
+  			$Llar = new Llar();
+  			$Llar->modificaAdreca($row['adreca']);
+			$Llar->modificaContrasenya($row['contrasenya']);
+			$Llar->modificaUsuari($row['usuari']);
+			$Llar->modificaPeriodeDeConfirmacio($row['periodeConfirmacio']);
+			array_push($arr, $Llar);	
+		}
+		return $arr;
 	}
 
 }
