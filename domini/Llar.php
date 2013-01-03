@@ -1,5 +1,7 @@
 <?php
 
+include_once ("Cuidador.php");
+
 class Llar {
 	private $adreca;
 	private $contrasenya;
@@ -26,7 +28,7 @@ class Llar {
 	}
 	
 	public function obteCuidadorDeGuardia() {
-		return $this->cuidador();
+		return $this->cuidador;
 	}
 
 	//setters
@@ -48,7 +50,7 @@ class Llar {
 	}
 	
 	public function modificaCuidadorDeGuardia($cuidador) {
-		$this->cuidador() = $cuidador;
+		$this->cuidador = $cuidador;
 	}
 	
 

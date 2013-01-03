@@ -30,7 +30,7 @@ class ControladorEmergencia implements IControladorEmergencia {
 	public function creaIncendi($Llar) {
 		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'?2','?3','?4');";
 		$iq = str_replace("?2", "Incendi", $iq);
-		$iq = str_replace("?3", $Llar->getUsuari(), $iq);
+		$iq = str_replace("?3", $Llar->obteUsuari(), $iq);
 		$iq = str_replace("?4", "NULL", $iq);
 		DB::executeQuery($iq);
 	}

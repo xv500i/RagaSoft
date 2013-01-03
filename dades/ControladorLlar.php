@@ -2,6 +2,7 @@
 
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorLlar.php");
 include_once ("DB.php");
+include_once (__DIR__ . "\\..\\domini\\Llar.php");
 
 class ControladorLlar implements IControladorLlar {
 	
@@ -11,7 +12,15 @@ class ControladorLlar implements IControladorLlar {
     public function obte($usuari) {
     	$query = str_replace("?1", $usuari, self::$querySelectAbstract);
 		$result = DB::executeQuery($query);
-		// TODO: crear usuari	
+		$Llar = new Llar();
+		while($row = mysql_fetch_array($result))
+  		{
+  			$Llar->modificaAdreca($row['adreca']);
+			$Llar->modificaContrasenya($row['contrasenya']);
+			$Llar->modificaUsuari($row['usuari']);
+			$Llar->modificaPeriodeDeConfirmacio($row['periodeConfirmacio']);	
+		}
+		return $Llar;
     }
 	
 	public function existeix($usuari) {
