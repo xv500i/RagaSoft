@@ -14,12 +14,7 @@ class Notificacio {
 	private $cuidador;
 	private $emergencia;
 
-	private function __construct($idN, $con, $esPo, $cui, $emer) {
-		$id = $idN;
-		$confirmada = $con;
-		$esPotConfirmar = $esPo;
-		$cuidador = $cui;
-		$emergencia = $emer;
+	private function __construct() {
 	}
 
 	public function confirma($telf1) {
