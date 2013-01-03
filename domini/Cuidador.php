@@ -5,6 +5,9 @@ class Cuidador {
 	private $nom;
 	private $telefon;
 
+	private function __construct() {
+	}
+
 	public function obteTelefon() {
 		return $telefon;
 	}
