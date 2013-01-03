@@ -5,11 +5,11 @@ abstract class EmergenciaResident extends Emergencia {
 	protected $resident;
 	
 	public function obteCuidador() {
-		return $resident->obteCuidadorDeGuardia();
+		return $this->resident->obteCuidadorDeGuardia();
 	}
 	
 	public function obtePeriodeDeConfirmacio() {
-		return $resident->obtePeriodeDeConfirmacio();
+		return $this->resident->obtePeriodeDeConfirmacio();
 	}
 }
 

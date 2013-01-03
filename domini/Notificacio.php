@@ -19,51 +19,51 @@ class Notificacio {
 	}
 
 	public function obteId() {
-		return $id;
+		return $this->id;
 	}
 	
 	public function modificaId($i) {
-		$id = $i;
+		$this->id = $i;
 	}
 	
 	public function obteConfirmada() {
-		return $confirmada;
+		return $this->confirmada;
 	}
 	
 	public function modificaConfirmada($c) {
-		$confirmada = $c;
+		$this->confirmada = $c;
 	}
 	
 	public function obteEsPotConfirmar() {
-		return $esPotConfirmar;
+		return $this->esPotConfirmar;
 	}
 	
 	public function modificaEsPotConfirmar($e) {
-		$esPotConfirmar = $e;
+		$this->esPotConfirmar = $e;
 	}
 	
 	public function obteCuidador() {
-		return $cuidador;
+		return $this->cuidador;
 	}
 	
 	public function modificaCuidador($c) {
-		$cuidador = $c;
+		$this->cuidador = $c;
 	}
 
 	public function obteEmergencia() {
-		return $emergencia;
+		return $this->emergencia;
 	}
 	
 	public function modificaEmergencia($e) {
-		$emergencia = $e;
+		$this->emergencia = $e;
 	}
 
 	public function confirma($telf1) {
-		$telf2 = $cuidador->obteTelefon();
+		$telf2 = $this->cuidador->obteTelefon();
 		if($telf1 == $telf2) {
-			if($esPotConfirmar) {
-				$esPotconfirmar = FALSE;
-				$confirmada = TRUE;
+			if($this->esPotConfirmar) {
+				$this->esPotconfirmar = FALSE;
+				$this->confirmada = TRUE;
 			} else {
 				enviaSMS($telf2, "Aquesta notificació ja no es pot confirmar");
 			}

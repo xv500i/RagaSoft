@@ -9,19 +9,19 @@ class Cuidador {
 	}
 
 	public function obteTelefon() {
-		return $telefon;
+		return $this->telefon;
 	}
 	
 	public function modificaTelefon($t) {
-		$telefon = $t;
+		$this->telefon = $t;
 	}
 	
 	public function obteNom() {
-		return $nom;
+		return $this->nom;
 	}
 	
 	public function modificaNom($n) {
-		$nom = $n;
+		$this->nom = $n;
 	}
 }
 
