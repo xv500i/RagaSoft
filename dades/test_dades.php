@@ -35,12 +35,6 @@
 	echo $c->obteTelefonDelServeiDeEmergencies();
 	echo "<br>";
 	
-	echo "Resident<br>";
-	$cu = $factory->getIControladorResident();
-	displayRows($cu->tots());
-	echo "<br>";
-	
-	
 	echo "Cuidador<br>";
 	$cu = $factory->getIControladorCuidador();
 	var_dump($cu->tots());
@@ -63,7 +57,6 @@
 	$cu = $factory->getIControladorResident();
 	displayRows($cu->tots());
 	echo "<br>";
-	
 	
 	echo "Llar<br>";
 	$cu = $factory->getIControladorLlar();
