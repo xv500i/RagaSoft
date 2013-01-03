@@ -1,5 +1,7 @@
 <?php
 
+include_once("EmergenciaResident.php");
+
 class Tardanca extends EmergenciaResident {
 	
 	public function obteMissatge() {

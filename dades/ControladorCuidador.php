@@ -2,6 +2,7 @@
 
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorCuidador.php");
 include_once ("DB.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Cuidador.php");
 
 class ControladorCuidador implements IControladorCuidador {
 	
@@ -11,7 +12,12 @@ class ControladorCuidador implements IControladorCuidador {
     public function obte($telefon) {
     	$query = str_replace("?1", $telefon, self::$querySelectAbstract);
 		$result = DB::executeQuery($query);
-		// TODO: crear usuari	
+		$cuidador = new Cuidador();
+		while($row = mysql_fetch_array($result)) {
+  			$cuidador->modificaNom($row['nom']);
+			$cuidador->modificaTelefon((int)$row['telefon']);	
+		}
+		return $cuidador;	
     }
 	
 	public function existeix($telefon) {
@@ -23,8 +29,14 @@ class ControladorCuidador implements IControladorCuidador {
 	
 	public function tots() {
 		$result = DB::executeQuery(self::$querySelectAll);
-		// TODO: crear usuaris
-		return $result;
+		$cuidadors = array();
+		while($row = mysql_fetch_array($result)) {
+			$cuidador = new Cuidador();
+  			$cuidador->modificaNom($row['nom']);
+			$cuidador->modificaTelefon((int)$row['telefon']);
+			array_push($cuidadors, $cuidador);
+		}
+		return $cuidadors;
 	}
 
 }

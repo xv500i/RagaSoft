@@ -1,5 +1,7 @@
 <?php
 
+include_once("Emergencia.php");
+
 abstract class EmergenciaResident extends Emergencia {
 	
 	protected $resident;

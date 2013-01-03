@@ -27,13 +27,9 @@ class ControladorEmergencia implements IControladorEmergencia {
 				$obj = new Incendi();
 				break;
 		}
-		$Llar = new Llar();
-		$Llar->modificaAdreca($row['adreca']);
-		$Llar->modificaContrasenya($row['contrasenya']);
-		$Llar->modificaUsuari($row['usuari']);
-		$Llar->modificaPeriodeDeConfirmacio($row['periodeConfirmacio']);	
-
-		return $Llar;	
+		// FIXME: emergencia no està acabada!
+		$obj->modificaMoment($row['moment']);			
+		return $obj;	
     }
 	
 	public function existeix($moment) {

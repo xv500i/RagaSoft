@@ -2,6 +2,7 @@
 
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorNotificacio.php");
 include_once ("DB.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Notificacio.php");
 
 class ControladorNotificacio implements IControladorNotificacio {
 	
@@ -11,7 +12,15 @@ class ControladorNotificacio implements IControladorNotificacio {
     public function obte($id) {
     	$query = str_replace("?1", $id, self::$querySelectAbstract);
 		$result = DB::executeQuery($query);
-		// TODO: crear usuari	
+		$notificacio = new Notificacio();
+		while($row = mysql_fetch_array($result)) {
+  			$notificacio->modificaId((int)$row['id']);
+			$notificacio->modificaConfirmada((bool)$row['confirmada']);
+			$notificacio->modificaEsPotConfirmar((bool)$row['esPotConfirmar']);
+			$notificacio->modificaCuidador((int)$row['idCuidador']);
+			$notificacio->modificaEmergencia($row['momentEmergencia']);	
+		}
+		return $notificacio;	
     }
 	
 	public function existeix($id) {
@@ -23,8 +32,17 @@ class ControladorNotificacio implements IControladorNotificacio {
 	
 	public function tots() {
 		$result = DB::executeQuery(self::$querySelectAll);
-		// TODO: crear usuaris
-		return $result;
+		$notificacions = array();
+		while($row = mysql_fetch_array($result)) {
+			$notificacio = new Notificacio();
+  			$notificacio->modificaId((int)$row['id']);
+			$notificacio->modificaConfirmada((bool)$row['confirmada']);
+			$notificacio->modificaEsPotConfirmar((bool)$row['esPotConfirmar']);
+			$notificacio->modificaCuidador((int)$row['idCuidador']);
+			$notificacio->modificaEmergencia($row['momentEmergencia']);
+			array_push($notificacions, $notificacio);
+		}
+		return $notificacions;
 	}
 
 	public function actualitza($notificacio) {
@@ -32,18 +50,16 @@ class ControladorNotificacio implements IControladorNotificacio {
 		$id = $notificacio->getId();
 		$c = ($notificacio->getConfirmada() ? "true": "false");
 		$epc = ($notificacio->getEsPotconfirmar() ? "true": "false");
-		$uq = "UPDATE NOTIFICACIO SET confirmada='" . $c . "', esPotConfirmar='" . $epc . "' WHERE id='" . $id . "';";
+		$uq = "UPDATE NOTIFICACIO SET confirmada=" . $c . ", esPotConfirmar=" . $epc . " WHERE id='" . $id . "';";
 		DB::executeQuery($uq);
 	}
 	
 	public function creaNotificacio($emergencia, $cuidador) {
 		$momentEmergencia = $emergencia->getMoment();
 		$idCuidador = $cuidador->getTelefon();
-		$iq = "INSERT INTO NOTIFICACIO (idCuidador, momentEmergencia, confirmada, esPotConfirmar) VALUES('?1','?2','?3','?4')";
+		$iq = "INSERT INTO NOTIFICACIO (idCuidador, momentEmergencia, confirmada, esPotConfirmar) VALUES('?1','?2',false,true)";
 		$iq = str_replace("?1", $idCuidador, $iq);
 		$iq = str_replace("?2", $momentEmergencia, $iq);
-		$iq = str_replace("?3", "false", $iq);
-		$iq = str_replace("?4", "true", $iq);
 		DB::executeQuery($iq);
 	}
 }

@@ -1,5 +1,7 @@
 <?php
 
+include_once("EmergenciaResident.php");
+
 class Incendi extends Emergencia {
 	
 	private $llar;

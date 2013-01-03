@@ -31,8 +31,8 @@
 	
 	$factory = FabricaControladorsDades::getInstance();
 	echo "Contactes<br>";
-	$cu = $factory->getIControladorContactes();
-	displayRows($cu->tots());
+	$c = Contactes::getInstance();
+	echo $c->obteTelefonDelServeiDeEmergencies();
 	echo "<br>";
 	
 	echo "Resident<br>";
@@ -40,25 +40,30 @@
 	displayRows($cu->tots());
 	echo "<br>";
 	
+	
 	echo "Cuidador<br>";
 	$cu = $factory->getIControladorCuidador();
-	displayRows($cu->tots());
+	var_dump($cu->tots());
 	echo "<br>";
+	
 	
 	echo "Notificacio<br>";
 	$cu = $factory->getIControladorNotificacio();
-	displayRows($cu->tots());
+	var_dump($cu->tots());
 	echo "<br>";
 	
+	// TODO: acabar aixo quan emergencia estigui fet
 	echo "Emergencia<br>";
 	$cu = $factory->getIControladorEmergencia();
 	displayRows($cu->tots());
 	echo "<br>";
 	
+	// TODO: acabar aixo quan resident estigui fet
 	echo "Resident<br>";
 	$cu = $factory->getIControladorResident();
 	displayRows($cu->tots());
 	echo "<br>";
+	
 	
 	echo "Llar<br>";
 	$cu = $factory->getIControladorLlar();

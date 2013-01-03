@@ -17,7 +17,7 @@ class ControladorLlar implements IControladorLlar {
   			$Llar->modificaAdreca($row['adreca']);
 			$Llar->modificaContrasenya($row['contrasenya']);
 			$Llar->modificaUsuari($row['usuari']);
-			$Llar->modificaPeriodeDeConfirmacio($row['periodeConfirmacio']);	
+			$Llar->modificaPeriodeDeConfirmacio((int)$row['periodeConfirmacio']);	
 		}
 		return $Llar;
     }
@@ -37,7 +37,7 @@ class ControladorLlar implements IControladorLlar {
   			$Llar->modificaAdreca($row['adreca']);
 			$Llar->modificaContrasenya($row['contrasenya']);
 			$Llar->modificaUsuari($row['usuari']);
-			$Llar->modificaPeriodeDeConfirmacio($row['periodeConfirmacio']);
+			$Llar->modificaPeriodeDeConfirmacio((int)$row['periodeConfirmacio']);
 			array_push($arr, $Llar);	
 		}
 		return $arr;

@@ -15,7 +15,7 @@ class Notificacio {
 	private $cuidador;
 	private $emergencia;
 
-	private function __construct() {
+	public function __construct() {
 	}
 
 	public function obteId() {
