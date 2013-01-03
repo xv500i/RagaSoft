@@ -17,7 +17,7 @@ class FabricaControladorsDades {
 	private $iControladorLlar;
 	private $iControladorContactes;
 	
-	private function __construct() {
+	public function __construct() {
 		
 	}
 	

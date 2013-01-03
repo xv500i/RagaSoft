@@ -14,6 +14,9 @@ class TxCreaIncedi implements Transaccio {
 			$ContDades = new FabricaControladorsDades();
 			$ContDades->getInstance();
 			$CtrlLlar = $ContDades->getIControladorLlar();
+			$Usuari = "PisBarriAntic";
+			if($CtrlLlar->existeix($Usuari)) {
+			}
 			$Llar = $CtrlLlar->obte($Usuari);
 			if(is_null($Llar)) {
 				throw new Exception ("llarNoExisteix");
