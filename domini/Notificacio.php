@@ -3,8 +3,9 @@
 include_once ("Cuidador.php");
 include_once ("ServiceLocator.php");
 include_once ("AdaptadorServeiEmergencies.php");
-//include_once (__DIR__ . "\\..\\dades\\FabricaControladorsDades.php");
-//include_once ("IControladorNotificacio.php");
+include_once (__DIR__ . "\\..\\dades\\FabricaControladorsDades.php");
+include_once ("IControladorNotificacio.php");
+include_once ("Contactes.php");
 
 class Notificacio {
 	
@@ -74,6 +75,34 @@ class Notificacio {
 		$sl->getInstance();
 		$ase = $sl->troba("ServeiSMS");
 		$ase->enviaSMS($t, $m);	
+	}
+	
+	public function enviaNotificacioAlServeiDeEmergencies() {
+		$mis = $this->emergencia->obteMissatge();
+		$con = new Contactes();
+		$con->getInstance();
+		$telf = $con->obteTelefonDelServeiDeEmergencies();
+		enviarSMS($telf,$mis);		
+	}
+	
+	public function callBackTimerNotificacio() 	{
+		$this->esPotConfirmar = FALSE;
+		$ContDades = new FabricaControladorsDades();
+		$ContDades->getInstance();
+		$CtrlNotificacio = $ContDades->getIControladorNotificacio();
+		$CtrlNotificacio->actualitza($this);
+		if (!$this->confirmada) {
+			enviaNotificacioAlServeiDeEmergencies();
+		}
+	}
+	
+	public function notifica() {
+		$m = $this->emergencia->obteMissatge();
+		$t = $this->cuidador->obteTelefon();
+		enviaSMS($t,$m);
+		$s = $this->emergencia->obtePeriodeDeConfirmacio();
+		sleep($s);
+		callBackTimerNotificacio();
 	}
 }
 
