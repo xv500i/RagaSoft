@@ -17,6 +17,46 @@ class Notificacio {
 	private function __construct() {
 	}
 
+	public function obteId() {
+		return $id;
+	}
+	
+	public function modificaId($i) {
+		$id = $i;
+	}
+	
+	public function obteConfirmada() {
+		return $confirmada;
+	}
+	
+	public function modificaConfirmada($c) {
+		$confirmada = $c;
+	}
+	
+	public function obteEsPotConfirmar() {
+		return $esPotConfirmar;
+	}
+	
+	public function modificaEsPotConfirmar($e) {
+		$esPotConfirmar = $e;
+	}
+	
+	public function obteCuidador() {
+		return $cuidador;
+	}
+	
+	public function modificaCuidador($c) {
+		$cuidador = $c;
+	}
+
+	public function obteEmergencia() {
+		return $emergencia;
+	}
+	
+	public function modificaEmergencia($e) {
+		$emergencia = $e;
+	}
+
 	public function confirma($telf1) {
 		$telf2 = $cuidador->obteTelefon();
 		if($telf1 == $telf2) {
