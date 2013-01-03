@@ -1,6 +1,8 @@
 <?php
 
 include_once ("Cuidador.php");
+include_once ("ServiceLocator.php");
+include_once ("AdaptadorServeiEmergencies.php");
 //include_once (__DIR__ . "\\..\\dades\\FabricaControladorsDades.php");
 //include_once ("IControladorNotificacio.php");
 
@@ -30,6 +32,13 @@ class Notificacio {
 				enviaSMS($telf2, "Aquesta notificació ja no es pot confirmar");
 			}
 		}
+	}
+	
+	public function enviarSMS($t, $m) {
+		$sl = new ServiceLocator();
+		$sl->getInstance();
+		$ase = $sl->troba("ServeiSMS");
+		$ase->enviaSMS($t, $m);	
 	}
 }
 

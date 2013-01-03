@@ -19,12 +19,14 @@ class ServiceLocator {
 		return self::$instance;
 	}
 	
-	public function getIControladorResident() {
-		if ($this->AdaptadorServeiEmergencies == NULL) {
-			$this->AdaptadorServeiEmergencies = new AdaptadorServeiEmergencies();
+	public function troba($text) {
+		if($text == "ServeiSMS") {
+			if ($this->AdaptadorServeiEmergencies == NULL) {
+				$this->AdaptadorServeiEmergencies = new AdaptadorServeiEmergencies();
+			}
+			return $this->AdaptadorServeiEmergencies;
 		}
-		return $this->AdaptadorServeiEmergencies;
 	}
-	
 }
+
 ?>
