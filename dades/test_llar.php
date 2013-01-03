@@ -4,5 +4,7 @@
 	
 	$fabrica = FabricaControladorsDades::getInstance();
 	$cu = $fabrica->getIControladorLlar();
-	var_dump($cu->tots());
+	$casa = $cu->obte("CasaPuig");
+	$ce = $fabrica->getIControladorEmergencia();
+	$ce->creaIncendi($casa);
 ?>

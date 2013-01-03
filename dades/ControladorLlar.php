@@ -2,7 +2,7 @@
 
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorLlar.php");
 include_once ("DB.php");
-include_once (__DIR__ . "\\..\\domini\\Llar.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Llar.php");
 
 class ControladorLlar implements IControladorLlar {
 	

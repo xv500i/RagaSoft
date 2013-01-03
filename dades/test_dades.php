@@ -62,6 +62,6 @@
 	
 	echo "Llar<br>";
 	$cu = $factory->getIControladorLlar();
-	displayRows($cu->tots());
+	var_dump($cu->tots());
 	echo "<br>";
 ?>

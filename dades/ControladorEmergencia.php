@@ -2,6 +2,9 @@
 
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorEmergencia.php");
 include_once ("DB.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Tardanca.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Incendi.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Caiguda.php");
 
 class ControladorEmergencia implements IControladorEmergencia {
 	
@@ -11,7 +14,26 @@ class ControladorEmergencia implements IControladorEmergencia {
     public function obte($moment) {
     	$query = str_replace("?1", $moment, self::$querySelectAbstract);
 		$result = DB::executeQuery($query);
-		// TODO: crear usuari	
+		
+		$row = mysql_fetch_array($result);
+		switch ($row['tipus']) {
+			case 'Tardanca':
+				$obj = new Tardanca();
+				break;
+			case 'Caiguda':
+				$obj = new Caiguda();
+				break;
+			case 'Incendi':
+				$obj = new Incendi();
+				break;
+		}
+		$Llar = new Llar();
+		$Llar->modificaAdreca($row['adreca']);
+		$Llar->modificaContrasenya($row['contrasenya']);
+		$Llar->modificaUsuari($row['usuari']);
+		$Llar->modificaPeriodeDeConfirmacio($row['periodeConfirmacio']);	
+
+		return $Llar;	
     }
 	
 	public function existeix($moment) {
@@ -28,26 +50,20 @@ class ControladorEmergencia implements IControladorEmergencia {
 	}
 
 	public function creaIncendi($Llar) {
-		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'?2','?3','?4');";
-		$iq = str_replace("?2", "Incendi", $iq);
+		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'Incendi','?3',NULL);";
 		$iq = str_replace("?3", $Llar->obteUsuari(), $iq);
-		$iq = str_replace("?4", "NULL", $iq);
 		DB::executeQuery($iq);
 	}
 	
 	public function creaTardanca($resident) {
-		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'?2','?3','?4');";
-		$iq = str_replace("?2", "Tardanca", $iq);
-		$iq = str_replace("?3", "NULL", $iq);
-		$iq = str_replace("?4", $resident->getUsuari(), $iq);
+		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'Tardanca',NULL,'?4');";
+		$iq = str_replace("?4", $resident->obteUsuari(), $iq);
 		DB::executeQuery($iq);
 	}
 	
 	public function creaCaiguda($resident) {
-		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'?2','?3','?4');";
-		$iq = str_replace("?2", "Caiguda", $iq);
-		$iq = str_replace("?3", "NULL", $iq);
-		$iq = str_replace("?4", $resident->getUsuari(), $iq);
+		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'Caiguda',NULL,'?4');";
+		$iq = str_replace("?4", $resident->obteUsuari(), $iq);
 		DB::executeQuery($iq);
 	}
 
