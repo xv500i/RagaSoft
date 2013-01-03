@@ -1,6 +1,6 @@
 <?php
 
-include_once (__DIR__ . "\\..\\domini\\IControladorNotificacio.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorNotificacio.php");
 include_once ("DB.php");
 
 class ControladorNotificacio implements IControladorNotificacio {

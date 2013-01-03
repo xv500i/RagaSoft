@@ -1,6 +1,6 @@
 <?php
 
-include_once (__DIR__ . "\\..\\domini\\IControladorEmergencia.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorEmergencia.php");
 include_once ("DB.php");
 
 class ControladorEmergencia implements IControladorEmergencia {
