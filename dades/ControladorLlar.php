@@ -12,8 +12,9 @@ class ControladorLlar implements IControladorLlar {
     public function obte($usuari) {
     	$query = str_replace("?1", $usuari, self::$querySelectAbstract);
 		$result = DB::executeQuery($query);
-		$Llar = new Llar();
+		$Llar = NULL;
 		while($row = mysql_fetch_array($result)) {
+			$Llar = new Llar();
   			$Llar->modificaAdreca($row['adreca']);
 			$Llar->modificaContrasenya($row['contrasenya']);
 			$Llar->modificaUsuari($row['usuari']);
