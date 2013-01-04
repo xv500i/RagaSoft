@@ -52,8 +52,9 @@ class ControladorEmergencia implements IControladorEmergencia {
 	}
 	
 	public function creaTardanca($resident) {
-		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'Tardanca',NULL,'?4');";
-		$iq = str_replace("?4", $resident->obteUsuari(), $iq);
+		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'Tardanca','?3','?4');";
+		$iq = str_replace("?3", $resident->obteLlar(), $iq);
+		$iq = str_replace("?4", $resident->obteIdRfid(), $iq);
 		DB::executeQuery($iq);
 	}
 	

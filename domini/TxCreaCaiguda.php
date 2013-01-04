@@ -16,8 +16,6 @@ class TxCreaCaiguda implements Transaccio {
 	public function execu() {
 			$ContDades = FabricaControladorsDades::getInstance();
 			$CtrlResident = $ContDades->getIControladorResident();
-			//proba
-			$this->idResident = 1;
 			$resident = $CtrlResident->obte($this->idResident);
 			if(is_null($resident)) {
 				throw new Exception ("residentNoExisteix");
