@@ -16,7 +16,7 @@ class TxCreaIncedi implements Transaccio {
 	public function execu() {
 			$ContDades = FabricaControladorsDades::getInstance();
 			$CtrlLlar = $ContDades->getIControladorLlar();
-			//$this->usuari = "PisBarriAntic"; He comentat això perquè l'usuari ens l'han de donar, no el podem assignar nosaltres
+			$this->usuari = "PisBarriAntic"; //He comentat això perquè l'usuari ens l'han de donar, no el podem assignar nosaltres
 			$Llar = $CtrlLlar->obte($this->usuari);
 			if(is_null($Llar)) {
 				throw new Exception ("llarNoExisteix");

@@ -2,6 +2,7 @@
 	include_once ("TxCreaIncendi.php");
 	include_once ("TxCreaCaiguda.php");
 	include_once ("TxCreaTardanca.php");
+	include_once ("TxNotifica.php");
 	
 
 	

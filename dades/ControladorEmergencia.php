@@ -70,6 +70,9 @@ class ControladorEmergencia implements IControladorEmergencia {
 		DB::executeQuery($iq);
 		$incendi = new Incendi();
 		$incendi->modificaLLar($Llar);
+		date_default_timezone_set('Europe/Madrid');
+		$date = date('m/d/Y h:i:s a', time());
+		$incendi->modificaMoment($date);
 		return $incendi;
 	}
 	
