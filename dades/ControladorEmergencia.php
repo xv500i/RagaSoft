@@ -71,7 +71,7 @@ class ControladorEmergencia implements IControladorEmergencia {
 		$incendi = new Incendi();
 		$incendi->modificaLLar($Llar);
 		date_default_timezone_set('Europe/Madrid');
-		$date = date('m/d/Y h:i:s a', time());
+		$date = date('m-d-Y h:i:s a', time());
 		$incendi->modificaMoment($date);
 		return $incendi;
 	}
@@ -82,6 +82,9 @@ class ControladorEmergencia implements IControladorEmergencia {
 		$iq = str_replace("?4", $resident->obteIdRfid(), $iq);
 		DB::executeQuery($iq);
 		$tardanca = new Tardanca();
+		date_default_timezone_set('Europe/Madrid');
+		$date = date('m-d-Y h:i:s a', time());
+		$tardanca->modificaMoment($date);
 		$tardanca->modificaResident($resident);
 		return $tardanca;
 	}
@@ -92,6 +95,9 @@ class ControladorEmergencia implements IControladorEmergencia {
 		$iq = str_replace("?4", $resident->obteIdRfid(), $iq);
 		DB::executeQuery($iq);
 		$caiguda = new Caiguda();
+		date_default_timezone_set('Europe/Madrid');
+		$date = date('m-d-Y h:i:s a', time());
+		$caiguda->modificaMoment($date);
 		$caiguda->modificaResident($resident);
 		return $caiguda;
 	}
