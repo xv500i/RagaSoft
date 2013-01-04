@@ -15,8 +15,9 @@ abstract class Emergencia {
 	public function creaNotificacio() {
 		$ContDades = FabricaControladorsDades::getInstance();
 		$CtrlNotificacio = $ContDades->getIControladorNotificacio();
-		obteCuidador();
-		
+		$c = $this->obteCuidador();
+		$n = $CtrlNotificacio->creaNotificacio($this, $c);
+		$n->notifica();
 	}
 	
 }
