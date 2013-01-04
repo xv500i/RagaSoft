@@ -1,5 +1,5 @@
 <?php
-interface AdaptadorServeiEmergencies
+interface IAdaptadorServeiEmergencies
 {
     public function enviaSMS($telefon, $text);
 }
