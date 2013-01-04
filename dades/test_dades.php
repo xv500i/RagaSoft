@@ -46,16 +46,14 @@
 	var_dump($cu->tots());
 	echo "<br>";
 	
-	// TODO: acabar aixo quan emergencia estigui fet
 	echo "Emergencia<br>";
 	$cu = $factory->getIControladorEmergencia();
 	var_dump($cu->tots());
 	echo "<br>";
 	
-	// TODO: acabar aixo quan resident estigui fet
 	echo "Resident<br>";
 	$cu = $factory->getIControladorResident();
-	displayRows($cu->tots());
+	var_dump($cu->tots());
 	echo "<br>";
 	
 	echo "Llar<br>";

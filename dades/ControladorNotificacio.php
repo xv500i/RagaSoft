@@ -17,7 +17,7 @@ class ControladorNotificacio implements IControladorNotificacio {
   			$notificacio->modificaId((int)$row['id']);
 			$notificacio->modificaConfirmada((bool)$row['confirmada']);
 			$notificacio->modificaEsPotConfirmar((bool)$row['esPotConfirmar']);
-			$notificacio->modificaCuidador((int)$row['idCuidador']);
+			$notificacio->modificaCuidador($row['idCuidador']);
 			$notificacio->modificaEmergencia($row['momentEmergencia']);	
 		}
 		return $notificacio;	
@@ -38,7 +38,7 @@ class ControladorNotificacio implements IControladorNotificacio {
   			$notificacio->modificaId((int)$row['id']);
 			$notificacio->modificaConfirmada((bool)$row['confirmada']);
 			$notificacio->modificaEsPotConfirmar((bool)$row['esPotConfirmar']);
-			$notificacio->modificaCuidador((int)$row['idCuidador']);
+			$notificacio->modificaCuidador($row['idCuidador']);
 			$notificacio->modificaEmergencia($row['momentEmergencia']);
 			array_push($notificacions, $notificacio);
 		}

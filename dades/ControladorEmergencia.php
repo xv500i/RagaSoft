@@ -46,7 +46,7 @@ class ControladorEmergencia implements IControladorEmergencia {
 			switch ($row['tipus']) {
 				case 'Tardanca':
 					$obj = new Tardanca();
-					$obj->modificaResident($row['idRfid']);
+					$obj->modificaResident($row['idRfidResident']);
 					break;
 				case 'Caiguda':
 					$obj = new Caiguda();

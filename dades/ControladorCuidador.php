@@ -15,7 +15,7 @@ class ControladorCuidador implements IControladorCuidador {
 		$cuidador = new Cuidador();
 		while($row = mysql_fetch_array($result)) {
   			$cuidador->modificaNom($row['nom']);
-			$cuidador->modificaTelefon((int)$row['telefon']);	
+			$cuidador->modificaTelefon($row['telefon']);	
 		}
 		return $cuidador;	
     }
@@ -33,7 +33,7 @@ class ControladorCuidador implements IControladorCuidador {
 		while($row = mysql_fetch_array($result)) {
 			$cuidador = new Cuidador();
   			$cuidador->modificaNom($row['nom']);
-			$cuidador->modificaTelefon((int)$row['telefon']);
+			$cuidador->modificaTelefon($row['telefon']);
 			array_push($cuidadors, $cuidador);
 		}
 		return $cuidadors;

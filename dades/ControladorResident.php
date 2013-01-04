@@ -18,10 +18,10 @@ class ControladorResident implements IControladorResident {
   			$resident->modificaHoraArribada($row['horaArribada']);
 			$resident->modificaIdRfid($row['idRfid']);
 			$resident->modificaNom($row['nom']);
-			$resident->modificaTeCaigudaActivada($row['teCaigudaActivada']);
-			$resident->modificaTeTardancaActivada($row['teTardancaActivada']);
-			$resident->modificaTeMancaActivada($row['teMancaActivada']);
-			$resident->modificaTePermanenciaProlongadaActivada($row['tePermanenciaActivada']);
+			$resident->modificaTeCaigudaActivada((bool)$row['teCaigudaActivada']);
+			$resident->modificaTeTardancaActivada((bool)$row['teTardancaActivada']);
+			$resident->modificaTeMancaActivada((bool)$row['teMancaActivada']);
+			$resident->modificaTePermanenciaProlongadaActivada((bool)$row['tePermanenciaActivada']);
 			$resident->modificaLlar($row['usuariLlar']);
 		}
 		return $resident;	
@@ -36,8 +36,20 @@ class ControladorResident implements IControladorResident {
 	
 	public function tots() {
 		$result = DB::executeQuery(self::$querySelectAll);
-		// TODO: crear usuaris
-		return $result;
+		$residents = array();
+		while($row = mysql_fetch_array($result)) {
+			$resident = new Resident();
+  			$resident->modificaHoraArribada($row['horaArribada']);
+			$resident->modificaIdRfid($row['idRfid']);
+			$resident->modificaNom($row['nom']);
+			$resident->modificaTeCaigudaActivada((bool)$row['teCaigudaActivada']);
+			$resident->modificaTeTardancaActivada((bool)$row['teTardancaActivada']);
+			$resident->modificaTeMancaActivada((bool)$row['teMancaActivada']);
+			$resident->modificaTePermanenciaProlongadaActivada((bool)$row['tePermanenciaActivada']);
+			$resident->modificaLlar($row['usuariLlar']);
+			array_push($residents, $resident);
+		}
+		return $residents;
 	}
 
 }
