@@ -11,6 +11,7 @@
 	$TxIn = new TxCreaIncedi();
 	$TxIn->execu();
 	$i = $TxIn->obteResultat();
+	var_dump($i);
 	
 	echo "Notifica";
 	echo "<br>";
