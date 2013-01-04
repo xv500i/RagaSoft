@@ -65,38 +65,39 @@ class ControladorEmergencia implements IControladorEmergencia {
 	}
 
 	public function creaIncendi($Llar) {
+		date_default_timezone_set('Europe/Madrid');
+		$date = date('Y-m-d H:i:s', time());
 		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'Incendi','?3',NULL);";
+		$iq = str_replace("?1", $date, $iq);
 		$iq = str_replace("?3", $Llar->obteUsuari(), $iq);
 		DB::executeQuery($iq);
 		$incendi = new Incendi();
 		$incendi->modificaLLar($Llar);
-		date_default_timezone_set('Europe/Madrid');
-		$date = date('m-d-Y h:i:s a', time());
 		$incendi->modificaMoment($date);
 		return $incendi;
 	}
 	
 	public function creaTardanca($resident) {
-		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'Tardanca','?3','?4');";
-		$iq = str_replace("?3", $resident->obteLlar(), $iq);
+		date_default_timezone_set('Europe/Madrid');
+		$date = date('Y-m-d H:i:s', time());
+		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES ('?1','Tardanca',NULL,'?4');";
+		$iq = str_replace("?1", $date, $iq);
 		$iq = str_replace("?4", $resident->obteIdRfid(), $iq);
 		DB::executeQuery($iq);
 		$tardanca = new Tardanca();
-		date_default_timezone_set('Europe/Madrid');
-		$date = date('m-d-Y h:i:s a', time());
 		$tardanca->modificaMoment($date);
 		$tardanca->modificaResident($resident);
 		return $tardanca;
 	}
 	
 	public function creaCaiguda($resident) {
-		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'Caiguda','?3','?4');";
-		$iq = str_replace("?3", $resident->obteLlar(), $iq);
+		date_default_timezone_set('Europe/Madrid');
+		$date = date('Y-m-d H:i:s', time());
+		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'Caiguda',NULL,'?4');";
+		$iq = str_replace("?1", $date, $iq);
 		$iq = str_replace("?4", $resident->obteIdRfid(), $iq);
 		DB::executeQuery($iq);
 		$caiguda = new Caiguda();
-		date_default_timezone_set('Europe/Madrid');
-		$date = date('m-d-Y h:i:s a', time());
 		$caiguda->modificaMoment($date);
 		$caiguda->modificaResident($resident);
 		return $caiguda;
