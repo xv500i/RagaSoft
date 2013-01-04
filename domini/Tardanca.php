@@ -1,6 +1,7 @@
 <?php
 
 include_once("EmergenciaResident.php");
+include_once("Resident.php");
 
 class Tardanca extends EmergenciaResident {
 	

@@ -1,7 +1,10 @@
 <?php
 
 include_once (__DIR__ . "\\..\\dades\\FabricaControladorsDades.php");
-include_once ("IControladorEmergencia.php");
+include_once ("IControladorNotificacio.php");
+include_once ("Cuidador.php");
+include_once ("Notificacio.php");
+
 
 abstract class Emergencia {
 	

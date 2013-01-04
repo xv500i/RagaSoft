@@ -3,6 +3,8 @@
 include_once ("Transaccio.php");
 include_once (__DIR__ . "\\..\\dades\\FabricaControladorsDades.php");
 include_once ("IControladorNotificacio.php");
+include_once ("Notificacio.php");
+
 
 class TxConfirmaNotificacio implements Transaccio {
 	
