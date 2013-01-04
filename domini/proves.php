@@ -3,9 +3,9 @@
 	include_once ("TxCreaCaiguda.php");
 	include_once ("TxCreaTardanca.php");
 	
-	echo "crear tardança";
+	echo "Notifica";
 	echo "<br>";
 	
-	$tr = new TxCreaTardanca();
+	$tr = new TxNotifica();
 	$tr->execu();
 ?>

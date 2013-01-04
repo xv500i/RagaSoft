@@ -24,10 +24,11 @@ class TxCreaIncedi implements Transaccio {
 				$CtrlEmergencia = $ContDades->getIControladorEmergencia();
 				$i = $CtrlEmergencia->creaIncendi($Llar);
 				$this->incendi = $i;				
-			}
-		
-			
-			
+			}			
+	}
+	
+	public function obteResultat() {
+		return $this->incendi;
 	}
 }
 

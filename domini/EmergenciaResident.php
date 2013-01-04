@@ -8,6 +8,10 @@ abstract class EmergenciaResident extends Emergencia {
 	
 	protected $resident;
 	
+	public function modificaResident($res) {
+		$this->resident = $res;
+	}
+	
 	public function obteCuidador() {
 		return $this->resident->obteCuidadorDeGuardia();
 	}

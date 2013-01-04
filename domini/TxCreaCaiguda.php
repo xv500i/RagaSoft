@@ -25,6 +25,10 @@ class TxCreaCaiguda implements Transaccio {
 				$this->caiguda = $c;				
 			}		
 	}
+	
+	public function obteResultat() {
+		return $this->caiguda;
+	}
 }
 
 ?>

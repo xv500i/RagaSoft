@@ -49,6 +49,9 @@ class ControladorEmergencia implements IControladorEmergencia {
 		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES (now(),'Incendi','?3',NULL);";
 		$iq = str_replace("?3", $Llar->obteUsuari(), $iq);
 		DB::executeQuery($iq);
+		$incendi = new Incendi();
+		$incendi->modificaLLar($Llar);
+		return $incendi;
 	}
 	
 	public function creaTardanca($resident) {
@@ -56,6 +59,9 @@ class ControladorEmergencia implements IControladorEmergencia {
 		$iq = str_replace("?3", $resident->obteLlar(), $iq);
 		$iq = str_replace("?4", $resident->obteIdRfid(), $iq);
 		DB::executeQuery($iq);
+		$tardanca = new Tardanca();
+		$tardanca->modificaResident($resident);
+		return $tardanca;
 	}
 	
 	public function creaCaiguda($resident) {
@@ -63,6 +69,9 @@ class ControladorEmergencia implements IControladorEmergencia {
 		$iq = str_replace("?3", $resident->obteLlar(), $iq);
 		$iq = str_replace("?4", $resident->obteIdRfid(), $iq);
 		DB::executeQuery($iq);
+		$caiguda = new Caiguda();
+		$caiguda->modificaResident($resident);
+		return $caiguda;
 	}
 
 }
