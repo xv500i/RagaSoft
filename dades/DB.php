@@ -11,6 +11,7 @@ class DB {
 		@mysql_select_db(self::$database) or die ("Impossible de selecionar la base de dades");
 		$result = mysql_query($query);
 		mysql_close();
+		echo $query . "<br>";
 		return $result;
 	}
 	
