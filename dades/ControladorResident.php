@@ -3,6 +3,7 @@
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorResident.php");
 include_once ("DB.php");
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Resident.php");
+include_once ("FabricaControladorsDades.php");
 
 class ControladorResident implements IControladorResident {
 	
@@ -22,7 +23,9 @@ class ControladorResident implements IControladorResident {
 			$resident->modificaTeTardancaActivada((bool)$row['teTardancaActivada']);
 			$resident->modificaTeMancaActivada((bool)$row['teMancaActivada']);
 			$resident->modificaTePermanenciaProlongadaActivada((bool)$row['tePermanenciaActivada']);
-			$resident->modificaLlar($row['usuariLlar']);
+			$f = FabricaControladorsDades::getInstance();
+			$cl = $f->getIControladorLlar();
+			$resident->modificaLlar($cl->obte($row['usuariLlar']));
 		}
 		return $resident;	
     }
@@ -46,7 +49,9 @@ class ControladorResident implements IControladorResident {
 			$resident->modificaTeTardancaActivada((bool)$row['teTardancaActivada']);
 			$resident->modificaTeMancaActivada((bool)$row['teMancaActivada']);
 			$resident->modificaTePermanenciaProlongadaActivada((bool)$row['tePermanenciaActivada']);
-			$resident->modificaLlar($row['usuariLlar']);
+			$f = FabricaControladorsDades::getInstance();
+			$cl = $f->getIControladorLlar();
+			$resident->modificaLlar($cl->obte($row['usuariLlar']));
 			array_push($residents, $resident);
 		}
 		return $residents;
