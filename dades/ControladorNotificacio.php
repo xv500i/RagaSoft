@@ -3,6 +3,7 @@
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorNotificacio.php");
 include_once ("DB.php");
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Notificacio.php");
+include_once ("FabricaControladorsDades.php");
 
 class ControladorNotificacio implements IControladorNotificacio {
 	
@@ -17,8 +18,11 @@ class ControladorNotificacio implements IControladorNotificacio {
   			$notificacio->modificaId((int)$row['id']);
 			$notificacio->modificaConfirmada((bool)$row['confirmada']);
 			$notificacio->modificaEsPotConfirmar((bool)$row['esPotConfirmar']);
-			$notificacio->modificaCuidador($row['idCuidador']);
-			$notificacio->modificaEmergencia($row['momentEmergencia']);	
+			$f = FabricaControladorsDades::getInstance();
+			$cc = $f->getIControladorCuidador();
+			$notificacio->modificaCuidador($cc->obte($row['idCuidador']));
+			$ce = $f->getIControladorEmergencia();
+			$notificacio->modificaEmergencia($ce->obte($row['momentEmergencia']));	
 		}
 		return $notificacio;	
     }
@@ -38,8 +42,11 @@ class ControladorNotificacio implements IControladorNotificacio {
   			$notificacio->modificaId((int)$row['id']);
 			$notificacio->modificaConfirmada((bool)$row['confirmada']);
 			$notificacio->modificaEsPotConfirmar((bool)$row['esPotConfirmar']);
-			$notificacio->modificaCuidador($row['idCuidador']);
-			$notificacio->modificaEmergencia($row['momentEmergencia']);
+			$f = FabricaControladorsDades::getInstance();
+			$cc = $f->getIControladorCuidador();
+			$notificacio->modificaCuidador($cc->obte($row['idCuidador']));
+			$ce = $f->getIControladorEmergencia();
+			$notificacio->modificaEmergencia($ce->obte($row['momentEmergencia']));
 			array_push($notificacions, $notificacio);
 		}
 		return $notificacions;
