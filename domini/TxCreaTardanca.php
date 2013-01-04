@@ -29,6 +29,10 @@ class TxCreaTardanca implements Transaccio {
 	public function obteResultat() {
 		return $this->tardanca;
 	}
+	
+	public function modificaIdResident($id) {
+		$this->idResident = $id;
+	}
 }
 
 ?>

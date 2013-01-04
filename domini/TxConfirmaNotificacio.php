@@ -18,6 +18,18 @@ class TxConfirmaNotificacio implements Transaccio {
 			$n->confirma($this->telefon);
 			$CtrlNotificacio->actualitza($n);		
 	}
+	
+	public function modificaIdNotificacio($id) {
+		$this->idNotificacio = $id;
+	}
+	
+	public function modificaTelefon($t) {
+		$this->telefon = $t;
+	}
+	
+	public function obteResultat() {
+		return null;
+	}
 }
 
 ?>

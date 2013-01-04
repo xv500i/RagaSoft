@@ -30,6 +30,10 @@ class TxCreaIncedi implements Transaccio {
 	public function obteResultat() {
 		return $this->incendi;
 	}
+	
+	public function modificaUsuari($u) {
+		$this->usuari = $u;
+	}
 }
 
 ?>

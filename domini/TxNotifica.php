@@ -11,6 +11,14 @@ class TxNotifica implements Transaccio {
 	public function execu() {
 		$this->emergencia->creaNotificacio();
 	}
+	
+	public function modificaEmergencia($e) {
+		$this->emergencia = $e;
+	}
+	
+	public function obteResultat() {
+		return null;
+	}
 }
 
 ?>
