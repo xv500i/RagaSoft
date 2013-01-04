@@ -2,7 +2,9 @@
 
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorLlar.php");
 include_once ("DB.php");
+include_once ("FabricaControladorsDades.php");
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Llar.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Cuidador.php");
 
 class ControladorLlar implements IControladorLlar {
 	
@@ -18,7 +20,14 @@ class ControladorLlar implements IControladorLlar {
   			$Llar->modificaAdreca($row['adreca']);
 			$Llar->modificaContrasenya($row['contrasenya']);
 			$Llar->modificaUsuari($row['usuari']);
-			$Llar->modificaPeriodeDeConfirmacio((int)$row['periodeConfirmacio']);	
+			$Llar->modificaPeriodeDeConfirmacio((int)$row['periodeConfirmacio']);
+			$sq = DB::executeQuery("SELECT telefon FROM cuidador WHERE usuariLlar = '" . $row['usuari'] . "';");
+			$rr = mysql_fetch_array($sq);
+			$idCuidador = $rr['telefon'];
+			$f = FabricaControladorsDades::getInstance();
+			$cc = $f->getIControladorCuidador();
+			$cuidador = $cc->obte($idCuidador);
+			$Llar->modificaCuidadorDeGuardia($cuidador);
 		}
 		return $Llar;
     }
@@ -39,6 +48,13 @@ class ControladorLlar implements IControladorLlar {
 			$Llar->modificaContrasenya($row['contrasenya']);
 			$Llar->modificaUsuari($row['usuari']);
 			$Llar->modificaPeriodeDeConfirmacio((int)$row['periodeConfirmacio']);
+			$sq = DB::executeQuery("SELECT telefon FROM cuidador WHERE usuariLlar = '" . $row['usuari'] . "';");
+			$rr = mysql_fetch_array($sq);
+			$idCuidador = $rr['telefon'];
+			$f = FabricaControladorsDades::getInstance();
+			$cc = $f->getIControladorCuidador();
+			$cuidador = $cc->obte($idCuidador);
+			$Llar->modificaCuidadorDeGuardia($cuidador);
 			array_push($arr, $Llar);	
 		}
 		return $arr;
