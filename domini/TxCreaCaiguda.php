@@ -11,16 +11,15 @@ class TxCreaCaiguda implements Transaccio {
 	private $caiguda;
 
 	public function execu() {
-			$ContDades = new FabricaControladorsDades();
-			$ContDades->getInstance();
+			$ContDades = FabricaControladorsDades::getInstance();
 			$CtrlResident = $ContDades->getIControladorResident();
-			$resident = $CtrlResident->obte($idResident);
-			if(is_null($Resident)) {
+			$resident = $CtrlResident->obte($this->idResident);
+			if(is_null($resident)) {
 				throw new Exception ("residentNoExisteix");
 			} else {
 				$CtrlEmergencia = $ContDades->getIControladorEmergencia();
 				$c = $CtrlEmergencia->creaCaiguda($resident);
-				$caiguda = $c;				
+				$this->caiguda = $c;				
 			}		
 	}
 }

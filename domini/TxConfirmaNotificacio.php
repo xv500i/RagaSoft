@@ -10,11 +10,10 @@ class TxConfirmaNotificacio implements Transaccio {
 	private $telefon;
 
 	public function execu() {
-			$ContDades = new FabricaControladorsDades();
-			$ContDades->getInstance();
+			$ContDades = FabricaControladorsDades::getInstance();
 			$CtrlNotificacio = $ContDades->getIControladorNotificacio();
-			$n = $CtrlNotificacio->obte($idNotificacio);
-			$n->confirma($telefon);
+			$n = $CtrlNotificacio->obte($this->idNotificacio);
+			$n->confirma($this->telefon);
 			$CtrlNotificacio->actualitza($n);		
 	}
 }

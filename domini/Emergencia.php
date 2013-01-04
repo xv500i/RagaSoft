@@ -13,8 +13,7 @@ abstract class Emergencia {
 	abstract public function obtePeriodeDeConfirmacio();
 	
 	public function creaNotificacio() {
-		$ContDades = new FabricaControladorsDades();
-		$ContDades->getInstance();
+		$ContDades = FabricaControladorsDades::getInstance();
 		$CtrlNotificacio = $ContDades->getIControladorNotificacio();
 		obteCuidador();
 		

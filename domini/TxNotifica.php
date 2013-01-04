@@ -9,7 +9,7 @@ class TxNotifica implements Transaccio {
 	private $emergencia;
 
 	public function execu() {
-		$emergencia->creaNotificacio();
+		$this->emergencia->creaNotificacio();
 	}
 }
 

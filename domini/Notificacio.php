@@ -70,25 +70,22 @@ class Notificacio {
 		}
 	}
 	
-	public function enviarSMS($t, $m) {
-		$sl = new ServiceLocator();
-		$sl->getInstance();
+	public function enviaSMS($t, $m) {
+		$sl = ServiceLocator::getInstance();
 		$ase = $sl->troba("ServeiSMS");
 		$ase->enviaSMS($t, $m);	
 	}
 	
 	public function enviaNotificacioAlServeiDeEmergencies() {
 		$mis = $this->emergencia->obteMissatge();
-		$con = new Contactes();
-		$con->getInstance();
+		$con = Contactes::getInstance();
 		$telf = $con->obteTelefonDelServeiDeEmergencies();
-		enviarSMS($telf,$mis);		
+		enviaSMS($telf,$mis);		
 	}
 	
 	public function callBackTimerNotificacio() 	{
 		$this->esPotConfirmar = FALSE;
-		$ContDades = new FabricaControladorsDades();
-		$ContDades->getInstance();
+		$ContDades = FabricaControladorsDades::getInstance();
 		$CtrlNotificacio = $ContDades->getIControladorNotificacio();
 		$CtrlNotificacio->actualitza($this);
 		if (!$this->confirmada) {
