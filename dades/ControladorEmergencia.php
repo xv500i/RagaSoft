@@ -41,8 +41,27 @@ class ControladorEmergencia implements IControladorEmergencia {
 	
 	public function tots() {
 		$result = DB::executeQuery(self::$querySelectAll);
-		// TODO: crear usuaris
-		return $result;
+		$emergencies = array();
+		while ($row = mysql_fetch_array($result)) {
+			switch ($row['tipus']) {
+				case 'Tardanca':
+					$obj = new Tardanca();
+					$obj->modificaResident($row['idRfid']);
+					break;
+				case 'Caiguda':
+					$obj = new Caiguda();
+					$obj->modificaResident($row['idRfidResident']);
+					break;
+				case 'Incendi':
+					$obj = new Incendi();
+					$obj->modificaLLar($row['usuariLlar']);
+					break;
+			}
+			// FIXME: emergencia no està acabada!
+			$obj->modificaMoment($row['moment']);
+			array_push($emergencies, $obj);
+		}
+		return $emergencies;
 	}
 
 	public function creaIncendi($Llar) {

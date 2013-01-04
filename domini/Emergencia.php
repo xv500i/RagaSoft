@@ -10,6 +10,14 @@ abstract class Emergencia {
 	
 	protected $moment;
 	
+	
+	public function obteMoment() {
+		return $this->moment;
+	}
+	
+	public function modificaMoment($m) {
+		$this->moment = $m;
+	}
 
 	abstract public function obteCuidador();
 	abstract public function obteMissatge();

@@ -49,7 +49,7 @@
 	// TODO: acabar aixo quan emergencia estigui fet
 	echo "Emergencia<br>";
 	$cu = $factory->getIControladorEmergencia();
-	displayRows($cu->tots());
+	var_dump($cu->tots());
 	echo "<br>";
 	
 	// TODO: acabar aixo quan resident estigui fet
