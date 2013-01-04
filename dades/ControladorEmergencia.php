@@ -5,6 +5,7 @@ include_once ("DB.php");
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Tardanca.php");
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Incendi.php");
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Caiguda.php");
+include_once ("FabricaControladorsDades.php");
 
 class ControladorEmergencia implements IControladorEmergencia {
 	
@@ -14,17 +15,23 @@ class ControladorEmergencia implements IControladorEmergencia {
     public function obte($moment) {
     	$query = str_replace("?1", $moment, self::$querySelectAbstract);
 		$result = DB::executeQuery($query);
-		
+		$f = FabricaControladorsDades::getInstance();
 		$row = mysql_fetch_array($result);
 		switch ($row['tipus']) {
 			case 'Tardanca':
 				$obj = new Tardanca();
+				$cr = $f->getIControladorResident();
+				$obj->modificaResident($cr->obte($row['idRfidResident']));
 				break;
 			case 'Caiguda':
 				$obj = new Caiguda();
+				$cr = $f->getIControladorResident();
+				$obj->modificaResident($cr->obte($row['idRfidResident']));
 				break;
 			case 'Incendi':
 				$obj = new Incendi();
+				$cl = $f->getIControladorLlar();
+				$obj->modificaLLar($cl->obte($row['usuariLlar']));
 				break;
 		}
 		// FIXME: emergencia no està acabada!
@@ -41,20 +48,24 @@ class ControladorEmergencia implements IControladorEmergencia {
 	
 	public function tots() {
 		$result = DB::executeQuery(self::$querySelectAll);
+		$f = FabricaControladorsDades::getInstance();
 		$emergencies = array();
 		while ($row = mysql_fetch_array($result)) {
 			switch ($row['tipus']) {
 				case 'Tardanca':
 					$obj = new Tardanca();
-					$obj->modificaResident($row['idRfidResident']);
+					$cr = $f->getIControladorResident();
+					$obj->modificaResident($cr->obte($row['idRfidResident']));
 					break;
 				case 'Caiguda':
 					$obj = new Caiguda();
-					$obj->modificaResident($row['idRfidResident']);
+					$cr = $f->getIControladorResident();
+					$obj->modificaResident($cr->obte($row['idRfidResident']));
 					break;
 				case 'Incendi':
 					$obj = new Incendi();
-					$obj->modificaLLar($row['usuariLlar']);
+					$cl = $f->getIControladorLlar();
+					$obj->modificaLLar($cl->obte($row['usuariLlar']));
 					break;
 			}
 			// FIXME: emergencia no està acabada!
