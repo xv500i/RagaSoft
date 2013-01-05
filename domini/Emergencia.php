@@ -28,7 +28,7 @@ abstract class Emergencia {
 		$CtrlNotificacio = $ContDades->getIControladorNotificacio();
 		$c = $this->obteCuidador();
 		$n = $CtrlNotificacio->creaNotificacio($this, $c);
-		//$n->notifica();
+		$n->notifica();
 	}
 	
 	

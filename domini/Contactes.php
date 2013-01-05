@@ -1,10 +1,11 @@
 <?php
 
+include_once ("IControladorContactes.php");
+include_once (__DIR__ . "\\..\\dades\\FabricaControladorsDades.php");
 
 class Contactes {
 
 	private static $instance;
-	private $telf = 112;
 
 	
 	private function __construct() {
@@ -19,6 +20,9 @@ class Contactes {
 	}
 	
 	public function obteTelefonDelServeiDeEmergencies() {
-		return $this->telf;
+		$ContDades = FabricaControladorsDades::getInstance();
+		$CtrlContactes = $ContDades->getIControladorContactes();
+		$telf = $CtrlContactes->obteTelf("SEM");
+		return $telf;
 	}
 }

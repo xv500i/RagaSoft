@@ -82,7 +82,7 @@ class Notificacio {
 		$mis = $this->emergencia->obteMissatge();
 		$con = Contactes::getInstance();
 		$telf = $con->obteTelefonDelServeiDeEmergencies();
-		enviaSMS($telf,$mis);		
+		//enviaSMS($telf,$mis);		
 	}
 	
 	public function callBackTimerNotificacio() 	{
@@ -91,17 +91,18 @@ class Notificacio {
 		$CtrlNotificacio = $ContDades->getIControladorNotificacio();
 		$CtrlNotificacio->actualitza($this);
 		if (!$this->confirmada) {
-			enviaNotificacioAlServeiDeEmergencies();
+			$this->enviaNotificacioAlServeiDeEmergencies();
 		}
 	}
 	
 	public function notifica() {
 		$m = $this->emergencia->obteMissatge();
 		$t = $this->cuidador->obteTelefon();
-		enviaSMS($t,$m);
+		//enviaSMS($t,$m);
 		$s = $this->emergencia->obtePeriodeDeConfirmacio();
-		sleep($s);
-		callBackTimerNotificacio();
+		echo $s;
+		//sleep($s); //falta saver som es fa el timer
+		$this->callBackTimerNotificacio();
 	}
 }
 

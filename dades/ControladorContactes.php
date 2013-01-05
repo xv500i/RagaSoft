@@ -16,6 +16,17 @@ class ControladorContactes implements IControladorContactes {
 		// TODO: crear usuari
     }
 	
+	public function obteTelf($nom) {
+		$query = "select telefon from contactes where descripcio = '?1'";
+		$query = str_replace("?1", $nom, $query);
+		$result = DB::executeQuery($query);
+		while($row = mysql_fetch_array($result))
+		{
+			$telf = $row['telefon'];
+		}
+		return $telf;
+	}
+	
 	public function existeix($telefon) {
 		$query = str_replace("?1", $telefon, self::$querySelectAbstract);
 		$result = DB::executeQuery($query);
