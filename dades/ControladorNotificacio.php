@@ -57,10 +57,7 @@ class ControladorNotificacio implements IControladorNotificacio {
 		$id = $notificacio->obteId();
 		$c = ($notificacio->obteConfirmada() ? "true": "false");
 		$epc = ($notificacio->obteEsPotconfirmar() ? "true": "false");
-		echo $c."<br>";
-		echo $epc."<br>";
 		$uq = "UPDATE NOTIFICACIO SET confirmada=" . $c . ", esPotConfirmar=" . $epc . " WHERE id='" . $id . "';";
-		//$query = "UPDATE NOTIFICACIO SET confirmada=" . $c . ", esPotConfirmar=" . $epc . " WHERE id='" . $id . "';";
 		DB::executeQuery($uq);
 	}
 	

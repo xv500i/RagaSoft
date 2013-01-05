@@ -3,19 +3,15 @@
 	include_once ("TxCreaCaiguda.php");
 	include_once ("TxCreaTardanca.php");
 	include_once ("TxNotifica.php");
+	include_once ("TxConfirmaNotificacio.php");
 	
 
 	
-	echo "Crear Incendi";
-	echo "<br>";
-	$TxIn = new TxCreaIncedi();
-	$TxIn->execu();
-	$i = $TxIn->obteResultat();
-	var_dump($i);
-	
-	echo "Notifica";
-	echo "<br>";
-	$tr = new TxNotifica();
-	$tr->modificaEmergencia($i);
-	$tr->execu();
+
+	echo "Confirma Notificacio";
+	$txConf = new TxConfirmaNotificacio();
+	$txConf->modificaIdNotificacio(18);
+	$txConf->modificaTelefon(633768939);
+	$txConf->execu();
+
 ?>

@@ -67,7 +67,9 @@ class Notificacio {
 				$this->esPotconfirmar = FALSE;
 				$this->confirmada = TRUE;
 			} else {
-				enviaSMS($telf2, "Aquesta notificació ja no es pot confirmar");
+				echo "No es pot confirmar";
+				echo "<br>";
+				//enviaSMS($telf2, "Aquesta notificació ja no es pot confirmar");
 			}
 		}
 	}
@@ -100,7 +102,6 @@ class Notificacio {
 		$t = $this->cuidador->obteTelefon();
 		//enviaSMS($t,$m);
 		$s = $this->emergencia->obtePeriodeDeConfirmacio();
-		echo $s;
 		//sleep($s); //falta saver som es fa el timer
 		$this->callBackTimerNotificacio();
 	}
