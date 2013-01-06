@@ -28,6 +28,10 @@ class Llar {
 	}
 	
 	public function obteCuidadorDeGuardia() {
+		return $this->cuidador[rand(0, count($this->cuidador))];
+	}
+	
+	public function obteCuidadors() {
 		return $this->cuidador;
 	}
 
@@ -49,10 +53,13 @@ class Llar {
 		$this->usuari = $usuari;
 	}
 	
-	public function modificaCuidadorDeGuardia($cuidador) {
+	public function modificaCuidadors($cuidador) {
 		$this->cuidador = $cuidador;
 	}
 	
+	public function afegeixCuidador($cui) {
+		$this->cuidador[] = $cui;
+	}
 
 }
 ?>
