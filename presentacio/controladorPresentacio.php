@@ -112,6 +112,15 @@ function controladorDomini_creaNotificacio( $tipus ){
 	// Los demás parámetros que se necesitan para generar una notificación se harán desde dominio,
 	// Como por ejemplo calcular la hora en que se produce, etc...
 	
+	switch ($tipus) {
+		case "incendi":
+		break;
+		case "tardanca":
+		break;
+		case "caiguda":	
+		break;
+	}
+	
 	// Esta función debería devolver:
 	// TRUE si se ha registrado la notificacion en la BD
 	// FALSE si ha habido algún problema
