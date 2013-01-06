@@ -111,7 +111,7 @@ function controladorDomini_creaNotificacio( $tipus ){
 	// El parametro $tipus es el tipo de notificación que se generará,
 	// Los demás parámetros que se necesitan para generar una notificación se harán desde dominio,
 	// Como por ejemplo calcular la hora en que se produce, etc...
-	
+	$success = true;
 	switch ($tipus) {
 		case "incendi":
 			$tx = new TxCreaIncedi();
@@ -132,10 +132,12 @@ function controladorDomini_creaNotificacio( $tipus ){
 	// TRUE si se ha registrado la notificacion en la BD
 	// FALSE si ha habido algún problema
 	
-	return true;
+	return $success;
 }
 
 function controladorDomini_confirmaNotificacio(){
+	
+	//FIXME: necesita el telefono del cuidador y el id de la notificacion
 	
 	// Esta función debería devolver:
 	// TRUE si se ha realizado correctamente el UPDATE de la notificacion y su estado ha pasado a Confirmada
