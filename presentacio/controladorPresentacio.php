@@ -2,13 +2,12 @@
    	
 //@session_start();
 
-//require_once 'Controlador.php';
-include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCrearCaiguda.php");
-include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCrearIncendi.php");
-include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCrearTardanca.php");
+
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaCaiguda.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaIncendi.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaTardanca.php");
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxNotifica.php");
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxConfirmaNotificacio.php");
-//$controlador = new Controlador;
 
 if( !isset( $_POST['peticion'] ) )	echo '<p>No existe peticion</p>';
 
@@ -135,8 +134,13 @@ function controladorDomini_cargaNotificacions(){
 	// Para eso se podrían hacer dos consultas, diferenciando por el booleano de CONFIRMADA.
 	// En el array de ejemplo $nPendents hay algunos valores true, pero deberían ser todos false.
 	
+	//Alex -> el controlador de presentacion se las tiene que manijar para poner los datos como quiera
+	// así que lo haré aquí mismo
+	$nPendents = array();
+	$nConfirmades = array();	
 	// Los campos deben ser: ( tipus, idRfid, nomResidentAfectat, moment, periodeConfirmacio, confirmada, id )
 	
+	/*
 	$nPendents= array( array("incendi", 123 , 'Leo Messi',			'3-1-2013 16:56', '10', false, 1 ),
 				array("caiguda", 123 , 'Cristiano Ronaldo', 		'14-2-2013 16:56', '60', false, 2 ),
 				array("tardanca", 123 , 'Pepe', 					'3-3-2013 00:00', '5', false, 3 ),
@@ -175,7 +179,7 @@ function controladorDomini_cargaNotificacions(){
 				array("caiguda", 123 , 'Pollo de David', 			'3-3-2013 16:56', '61', true, 33 ),
 				array("caiguda", 123 , 'Jaimito Tito', 				'33-10-2013 16:56', '10', true, 34 )
 			);
-	
+	*/
 	return array_merge($nPendents, $nConfirmades);
 }
 
