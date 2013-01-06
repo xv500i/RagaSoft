@@ -22,12 +22,16 @@ class ControladorLlar implements IControladorLlar {
 			$Llar->modificaUsuari($row['usuari']);
 			$Llar->modificaPeriodeDeConfirmacio((int)$row['periodeConfirmacio']);
 			$sq = DB::executeQuery("SELECT telefon FROM cuidador WHERE usuariLlar = '" . $row['usuari'] . "';");
-			$rr = mysql_fetch_array($sq);
-			$idCuidador = $rr['telefon'];
+			// aqui hi ha l'ultim canvi per afegir més d'un cuidador
 			$f = FabricaControladorsDades::getInstance();
 			$cc = $f->getIControladorCuidador();
-			$cuidador = $cc->obte($idCuidador);
-			$Llar->modificaCuidadorDeGuardia($cuidador);
+			$cuidadors = array();
+			while($rr = mysql_fetch_array($sq)) {
+				$idCuidador = $rr['telefon'];
+				$cuidador = $cc->obte($idCuidador);
+				array_push($cuidadors, $cuidador);
+			}
+			$Llar->modificaCuidadorDeGuardia($cuidadors);
 		}
 		return $Llar;
     }
