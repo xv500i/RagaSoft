@@ -114,11 +114,18 @@ function controladorDomini_creaNotificacio( $tipus ){
 	
 	switch ($tipus) {
 		case "incendi":
-		break;
+			$tx = new TxCreaIncedi();
+			// FIXME: obtenir usuari de la sessio o demanar-lo en un select camp
+			//$tx->modificaUsuari();
+			break;
 		case "tardanca":
-		break;
-		case "caiguda":	
-		break;
+			$tx = new TxCreaTardanca();
+			// FIXME: obtenir usuari
+			break;
+		case "caiguda":
+			$tx = new TxCreaCaiguda();
+			// FIXME: obtenir usuari
+			break;
 	}
 	
 	// Esta función debería devolver:
