@@ -3,7 +3,11 @@
 //@session_start();
 
 //require_once 'Controlador.php';
-
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCrearCaiguda.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCrearIncendi.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCrearTardanca.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxNotifica.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxConfirmaNotificacio.php");
 //$controlador = new Controlador;
 
 if( !isset( $_POST['peticion'] ) )	echo '<p>No existe peticion</p>';
@@ -28,7 +32,7 @@ function cargarNotificaciones(){
 	<table class="tablaNotificaciones" border="0" cellspacing="0">
 		<tr>
 			<th>Tipus</th>
-			<th>idRFID</th>
+			<th>Identificador RFID</th>
 			<th>Nom</th>
 			<th>Data</th>
 			<th>Periode (minuts)</th>
