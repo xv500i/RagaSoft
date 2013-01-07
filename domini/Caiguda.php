@@ -6,7 +6,7 @@ include_once ("Resident.php");
 class Caiguda extends EmergenciaResident {
 	
 	public function obteMissatge() {
-		return "El resident " + $this->resident->obteIdRfid() + " ha caigut";
+		return "El resident " . $this->resident->obteIdRfid() . " ha caigut";
 	}
 	
 	public function queEts() {
