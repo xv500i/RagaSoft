@@ -13,7 +13,7 @@ class Incendi extends Emergencia {
 	}
 	
 	public function obteAfectat() {
-		return $this->llar->obteUsuari();
+		return $this->llar->obteUsuari() . "(" . $this->llar->obteAdreca()  . ")";
 	}
 	
 	public function obtePeriodeDeConfirmacio() {
