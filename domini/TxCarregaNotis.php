@@ -8,7 +8,7 @@ include_once ("Notificacio.php");
 
 class TxCarregaNotis implements Transaccio {
 	
-	private $result;
+	private $resultat;
 	
 	public function execu() {
 		$ContDades = FabricaControladorsDades::getInstance();
@@ -25,10 +25,11 @@ class TxCarregaNotis implements Transaccio {
 			$res = array($tipus, $afectat, $telf, $mom, $per, $con);
 			$result[] = $res;
 		}
+		$this->resultat = $result;
 	}
 
 	public function obteResultat() {
-		return $this->result;
+		return $this->resultat;
 	}
 }
 
