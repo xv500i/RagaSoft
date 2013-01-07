@@ -25,10 +25,10 @@ function cargarNotificaciones(){
 	<table class="tablaNotificaciones" border="0" cellspacing="0">
 		<tr>
 			<th>Tipus</th>
-			<th>Identificador RFID</th>
-			<th>Nom</th>
+			<th>Afectat</th>
+			<th>Cuidador</th>
 			<th>Data</th>
-			<th>Periode (minuts)</th>
+			<th>Periode</th>
 			<th id="thConfirmar">Confirmar</th>
 		</tr>
 		<?php
@@ -39,14 +39,14 @@ function cargarNotificaciones(){
 				else if( $n[$i][0] == 'caiguda' ) 	echo "<img title=\"Caiguda\" src=\"img/ico/caida20.png\"></img>";
 				else if( $n[$i][0] == 'tardanca' )	echo "<img title=\"Tarança\" src=\"img/ico/clock20.png\"></img>"; 
 			?></td>
-			<td class="tdIdRFID"><?php echo $n[$i][1]; ?></td>
+			<td class="tdAfectat"><?php echo $n[$i][1]; ?></td>
 			<td><?php echo $n[$i][2]; ?></td>
 			<td><?php echo $n[$i][3]; ?></td>
 			<td class="tdPeriode"><?php echo $n[$i][4]; ?></td>
 			<td class="tdConfirmar" id="idTdConfirmar<?php echo $n[$i][6]?>">
 				<?php 
 					if ($n[$i][5]) 	echo "<img title=\"Notificación Confirmada\" src=\"img/ico/tick.png\"></img>"; 
-					else 			echo "<a class=\"linkConfirmar\" href=\"javascript:peticion('confirmar',".$n[$i][6].");\">Confirmar</a>";	
+					else 			echo "<img title=\"Notificación No Confirmada\" src=\"img/ico/cross.png\"></img>"; //echo "<a class=\"linkConfirmar\" href=\"javascript:peticion('confirmar',".$n[$i][6].");\">Confirmar</a>";	
 				?></td>
 		</tr>
 		<?php 
