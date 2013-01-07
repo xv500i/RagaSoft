@@ -25,12 +25,12 @@ function cargarNotificaciones(){
 	<table class="tablaNotificaciones" border="0" cellspacing="0">
 		<tr>
 			<th>Tipus</th>
-			<th>Id Noti</th>
+			<th>ID</th>
 			<th>Afectat</th>
 			<th>Cuidador</th>
 			<th>Data</th>
 			<th>Periode</th>
-			<th id="thConfirmar">Confirmar</th>
+			<th id="thConfirmar">Confirmada</th>
 		</tr>
 		<?php
 		for ($i = 0; $i < sizeof($n); $i++){?>
