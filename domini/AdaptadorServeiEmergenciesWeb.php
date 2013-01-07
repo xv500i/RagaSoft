@@ -8,6 +8,8 @@ include_once ("ServeiSMS.php");
 class AdaptadorServeiEmergenciesWeb implements IAdaptadorServeiEmergencies {
 	
 	public function enviaSMS($telefon, $text) {
+		//FIXME: per si un cas	
+		return;
 		require_once("mensatek.inc");
 		$Mensatek=new cMensatek("xv500i@gmail.com","ragasoft");
 		$variables=array(
