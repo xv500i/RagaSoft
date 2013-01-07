@@ -13,7 +13,7 @@ abstract class EmergenciaResident extends Emergencia {
 	}
 	
 	public function obteAfectat() {
-		return $this->resident->obteIdRfid();
+		return $this->resident->obteNom() . "(" . $this->resident->obteIdRfid() . ")";
 	}
 	
 	public function obteCuidador() {
