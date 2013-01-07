@@ -1,9 +1,9 @@
 <?php
 ////////////////////////////////////////////////////
-// CONEXIÓN A MENSATEK POR HTTP/S DESDE PHP
-// versión PHP 
-// versión API 4.0                       
-// Última modificación 3 Septiembre 2006
+// CONEXIï¿½N A MENSATEK POR HTTP/S DESDE PHP
+// versiï¿½n PHP 
+// versiï¿½n API 4.0                       
+// ï¿½ltima modificaciï¿½n 3 Septiembre 2006
 ////////////////////////////////////////////////////
 
 
@@ -17,7 +17,7 @@
 define('G_PUERTO',3377);
 
 /////////////////////////////////////////////////////////////////
-// Si desea comunicaciones seguras SSL debe tener activada la extensión SSL
+// Si desea comunicaciones seguras SSL debe tener activada la extensiï¿½n SSL
 // y quitar los comentarios de las dos siguientes sentencias
 /////////////////////////////////////////////////////////////////
 /* define('G_PUERTO',443);  Si tiene un firewall que no deja comunicaciones en el 3378, puede utilizar el puerto 443*/
@@ -43,9 +43,9 @@ class cMensatek
     
 
     //////////////////////////////////////////////////////
-    // OBTIENE EL NÚMERO DE CRÉDITOS RESTANTES DEL USUARIO
+    // OBTIENE EL Nï¿½MERO DE CRï¿½DITOS RESTANTES DEL USUARIO
     // DEVUELVE:
-    //  Float en $this->Creditos correspondiente al número de créditos en la cuenta.
+    //  Float en $this->Creditos correspondiente al nï¿½mero de crï¿½ditos en la cuenta.
     ///////////////////////////////////////////////////////
 
     function creditos()
@@ -56,32 +56,32 @@ class cMensatek
     }
 
     //////////////////////////////////////////////////////
-    // ENVÍA MENSAJES A MÓVILES
+    // ENVï¿½A MENSAJES A Mï¿½VILES
     // - Valores: Array con todas o alguna de las siguientes variables
-    //      Destinatarios: Móvil/Móviles al/a los que se envía el mensaje, de la forma PrefijoTelefono (Ej:346000000 ó para varios destinatarios
+    //      Destinatarios: Mï¿½vil/Mï¿½viles al/a los que se envï¿½a el mensaje, de la forma PrefijoTelefono (Ej:346000000 ï¿½ para varios destinatarios
     //           346000000;3519760000;443450000) separados por punto y coma ';'
-    //      Mensaje: Mensaje que se envía
-    //      Remitente: (Por defecto "") Es el teléfono, nombre de la empresa o persona que envía. Sólo válido si se envía mensaje profesional
-    //            Si se deja en blanco y se selecciona mensaje profesional, se enviará desde el teléfono móvil registrado por el usuario qu envía en Mensatek
-    //            ATENCIÓN: Si es alfanumérico el Máximo es de 11 caracteres.
-    //      Fecha: Fecha en la que queda progrmado el envío, el mensaje se enviará en esa fecha. Por defecto "" que significa enviar ahora. Formato: Año-Mes-dia hora:minuto
-    //          La referencia horaria es GMT+1 (Zona horaria de España)
-    //      Flash: 0=No, 1=Sí
-    //      Report: 0=No, 1=Sí  (1=se envía report de entrega al correo electrónico)
-    //      Descuento: 0=No, 1=Sí 
-    //      EmailReport: Correo electrónico que recibirá el report. Si no se utiliza y se ha seleccionado Report=1, se enviará al correo registrado como usuario en MENSATEK.(ATENCIÓN: Debe ser un correo válido). 
-    //                   ::Atención::Si desea que se envíe un correo de report personalizado con su nombre de dominio contacte con el Departamento de Soporte
-    //      Descuento: Se hará un 10% de descuento (en créditos) si incluye en el mensaje [MENSATEK.com]
+    //      Mensaje: Mensaje que se envï¿½a
+    //      Remitente: (Por defecto "") Es el telï¿½fono, nombre de la empresa o persona que envï¿½a. Sï¿½lo vï¿½lido si se envï¿½a mensaje profesional
+    //            Si se deja en blanco y se selecciona mensaje profesional, se enviarï¿½ desde el telï¿½fono mï¿½vil registrado por el usuario qu envï¿½a en Mensatek
+    //            ATENCIï¿½N: Si es alfanumï¿½rico el Mï¿½ximo es de 11 caracteres.
+    //      Fecha: Fecha en la que queda progrmado el envï¿½o, el mensaje se enviarï¿½ en esa fecha. Por defecto "" que significa enviar ahora. Formato: Aï¿½o-Mes-dia hora:minuto
+    //          La referencia horaria es GMT+1 (Zona horaria de Espaï¿½a)
+    //      Flash: 0=No, 1=Sï¿½
+    //      Report: 0=No, 1=Sï¿½  (1=se envï¿½a report de entrega al correo electrï¿½nico)
+    //      Descuento: 0=No, 1=Sï¿½ 
+    //      EmailReport: Correo electrï¿½nico que recibirï¿½ el report. Si no se utiliza y se ha seleccionado Report=1, se enviarï¿½ al correo registrado como usuario en MENSATEK.(ATENCIï¿½N: Debe ser un correo vï¿½lido). 
+    //                   ::Atenciï¿½n::Si desea que se envï¿½e un correo de report personalizado con su nombre de dominio contacte con el Departamento de Soporte
+    //      Descuento: Se harï¿½ un 10% de descuento (en crï¿½ditos) si incluye en el mensaje [MENSATEK.com]
     // DEVUELVE: Un array
     //  Res: Int
-    //      >0 correspondiente al número de mensajes enviados.
-    //      -1 Error de autenticación
-    //      -2 no hay créditos suficientes.
+    //      >0 correspondiente al nï¿½mero de mensajes enviados.
+    //      -1 Error de autenticaciï¿½n
+    //      -2 no hay crï¿½ditos suficientes.
     //      -3 Error en los datos de la llamada
     //  Msgid: Int
     //      identificador del mensaje enviado para utilizar en el report
     //  Cred: Float
-    //      número de créditos que le restan.
+    //      nï¿½mero de crï¿½ditos que le restan.
     ///////////////////////////////////////////////////////
 
     function enviar($Valores)
@@ -95,17 +95,17 @@ class cMensatek
     }
     
     //////////////////////////////////////////////////////
-    // REPORT DE ENVÍO
-    // MsgId: Identificador de mensaje devuelto por la función de envío.
+    // REPORT DE ENVï¿½O
+    // MsgId: Identificador de mensaje devuelto por la funciï¿½n de envï¿½o.
     // DEVUELVE:
-    //  - Entero con el Número de reports
-    //  - Carga Array en $this->Res con n valores (tantos como teléfonos de destino) del tipo 
-    //         $this->Res[n]["Fecha"] Fecha/Hora de envío
-    //         $this->Res[n]["Movil"] Móvil destino
-    //         $this->Res[n]["Tiempo"] Tiempo (en segundos) que tardó en entregarse el mensaje al móvil (normalmente entre 2 s 20 segundos si el móvil está encendido).
-    //         $this->Res[n]["Resultado"] String con el resultado del envío (entregado, móvil erróneo, etc...). Se compone de:
-    //          1.- Resultado String(Mensaje entregado, esperando entrega, etc…)
-    //          2.- Link a imagen que varía en función del resultado, sirve para utilizarlas como ayuda rápida al cliente (ver ejemplo en reports en Mensatek).
+    //  - Entero con el Nï¿½mero de reports
+    //  - Carga Array en $this->Res con n valores (tantos como telï¿½fonos de destino) del tipo 
+    //         $this->Res[n]["Fecha"] Fecha/Hora de envï¿½o
+    //         $this->Res[n]["Movil"] Mï¿½vil destino
+    //         $this->Res[n]["Tiempo"] Tiempo (en segundos) que tardï¿½ en entregarse el mensaje al mï¿½vil (normalmente entre 2 s 20 segundos si el mï¿½vil estï¿½ encendido).
+    //         $this->Res[n]["Resultado"] String con el resultado del envï¿½o (entregado, mï¿½vil errï¿½neo, etc...). Se compone de:
+    //          1.- Resultado String(Mensaje entregado, esperando entrega, etcï¿½)
+    //          2.- Link a imagen que varï¿½a en funciï¿½n del resultado, sirve para utilizarlas como ayuda rï¿½pida al cliente (ver ejemplo en reports en Mensatek).
     //          El formato es: <img src="pix/bverde.gif" hspace="2" border="0">
     //              Posibles colores:
     //              bverde.gif (entregado),
@@ -136,16 +136,16 @@ class cMensatek
     }
     
     //////////////////////////////////////////////////////
-    // SUBVENCIONAR CRÉDITOS A OTRA CUENTA DE USUARIO
-    // CorreoDestino: Correo del usuario destino de los créditos.
-    // Creditos: Número de crédtos a añadir al usuario  
+    // SUBVENCIONAR CRï¿½DITOS A OTRA CUENTA DE USUARIO
+    // CorreoDestino: Correo del usuario destino de los crï¿½ditos.
+    // Creditos: Nï¿½mero de crï¿½dtos a aï¿½adir al usuario  
     // DEVUELVE:
-    //  - Si >0 Entero con el Número de créditos efectivamente añadidos al usuario o error
+    //  - Si >0 Entero con el Nï¿½mero de crï¿½ditos efectivamente aï¿½adidos al usuario o error
     //  - Si <0  
     //   -1 Errror de usuario
-    //   -2 No hay suficientes créditos
+    //   -2 No hay suficientes crï¿½ditos
     //   -3 Correo de destino no existe
-    //   -4 Créditos <0
+    //   -4 Crï¿½ditos <0
     ///////////////////////////////////////////////////////
 
     function subvencionar($CorreoDestino,$Creditos)       
@@ -185,7 +185,7 @@ class cMensatek
         else
         {
             $fp = @fsockopen ("api.mensatek.com", G_PUERTO, $errno, $errstr, 30);
-            if (!fp) echo "Su sistema no permite trabajar con sockets, active la funcionalidad de sockets en PHP para utilizar la librería";
+            if (!$fp) echo "Su sistema no permite trabajar con sockets, active la funcionalidad de sockets en PHP para utilizar la librerï¿½a";
             else
             {
                $string="GET ".$dir."?".$args;

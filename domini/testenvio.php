@@ -1,4 +1,4 @@
-<?
+<?php
 require_once("mensatek.inc");
 // Crear instancia Clase
 $Mensatek=new cMensatek("xv500i@gmail.com","ragasoft");
@@ -17,18 +17,18 @@ $variables=array(
 "Destinatarios"=>"34696396699", // Destinatarios del mensaje, si es m�s de 1 sep�relos por punto y coma
 "Mensaje"=>"Si llegeixes aixo ja funciona", //Mensaje, si se env�an m�s de 160 caracteres se enviar� en varios mensajes
 "Flash"=>0, // Formato Flash 
-"Report"=>1,  //Report de entrega al correo electr�nico por defecto
+"Report"=>0,  //Report de entrega al correo electr�nico por defecto
 "Descuento"=>0 // Si utiliza descuento o no
 );
 
 
 // Ejemplo de env�o
-//$res=$Mensatek->enviar($variables);
-//echo "<br>Se enviaron ".$res["Res"]." mensajes y le restan ".$res["Cred"]." cr&eacute;ditos";
+$res=$Mensatek->enviar($variables);
+echo "<br>Se enviaron ".$res["Res"]." mensajes y le restan ".$res["Cred"]." cr&eacute;ditos";
 
 // Ejemplo de obtendi�n directa de cr�ditos restantes en su cuenta
-//echo "<br>Le restan ".$Mensatek->creditos()." cr&eacute;ditos";
-var_dump($Mensatek->creditos());
+echo "<br>Le restan ".$Mensatek->creditos()." cr&eacute;ditos";
+//var_dump($Mensatek->creditos());
 
 // Ejemplo de obtenci�n de reports de env�o
 /*
