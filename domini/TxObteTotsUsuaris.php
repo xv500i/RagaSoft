@@ -4,7 +4,7 @@ include_once ("Transaccio.php");
 include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "dades" . DIRECTORY_SEPARATOR . "FabricaControladorsDades.php");
 
 
-class TxObteTotsIdRfid implements Transaccio {
+class TxObteTotsUsuaris implements Transaccio {
 	
 	private $usuaris;
 
@@ -20,7 +20,7 @@ class TxObteTotsIdRfid implements Transaccio {
 	}
 	
 	public function obteResultat() {
-		return $ids;
+		return $this->usuaris;
 	}
 }
 
