@@ -3,20 +3,22 @@
 include_once ("Transaccio.php");
 
 
-class TxNotifica implements Transaccio {
+class TxObteTotsIdRfid implements Transaccio {
 	
-	private $emergencia;
+	private $ids;
 
 	public function execu() {
-		$this->emergencia->creaNotificacio();
-	}
-	
-	public function modificaEmergencia($e) {
-		$this->emergencia = $e;
+		$f = FabricaControladorsDades::getInstance();
+		$cr = $f->getIControladorResident();
+		$residents = $cr->tots();
+		$ids = array();
+		foreach ($residents as $resident) {
+			array_push($ids, $resident->obteIdRfid());
+		}
 	}
 	
 	public function obteResultat() {
-		return null;
+		return $ids;
 	}
 }
 
