@@ -66,7 +66,7 @@ function confirmar(){
 		echo '<resultado>';
 			echo '<![CDATA[';
 			
-			if ( controladorDomini_confirmaNotificacio() ) echo "OK";
+			if ( controladorDomini_confirmaNotificacio($_POST['idNotificacion']) ) echo "OK";
 			else echo "ERROR";
 			
 			echo 	']]>';
@@ -133,7 +133,7 @@ function controladorDomini_creaNotificacio( $tipus ){
 	return $success;
 }
 
-function controladorDomini_confirmaNotificacio(){
+function controladorDomini_confirmaNotificacio($id){
 	
 	include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxConfirmaNotificacio.php");
 	
