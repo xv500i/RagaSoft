@@ -6,17 +6,17 @@ include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "dade
 
 class TxObteTotsIdRfid implements Transaccio {
 	
-	private $ids;
+	private $usuaris;
 
 	public function execu() {
 		$f = FabricaControladorsDades::getInstance();
-		$cr = $f->getIControladorResident();
-		$residents = $cr->tots();
-		$ids = array();
-		foreach ($residents as $resident) {
-			array_push($ids, $resident->obteIdRfid());
+		$cl = $f->getIControladorLlar();
+		$llars = $cl->tots();
+		$usuaris = array();
+		foreach ($llars as $llar) {
+			array_push($usuaris, $llar->obteUsuari());
 		}
-		$this->ids = $ids;
+		$this->usuaris = $usuaris;
 	}
 	
 	public function obteResultat() {
