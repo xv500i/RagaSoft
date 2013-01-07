@@ -28,7 +28,7 @@ class Llar {
 	}
 	
 	public function obteCuidadorDeGuardia() {
-		return $this->cuidador[rand(0, count($this->cuidador))];
+		return $this->cuidador[rand(0, count($this->cuidador)-1)];
 	}
 	
 	public function obteCuidadors() {
