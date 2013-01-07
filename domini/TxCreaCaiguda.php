@@ -2,10 +2,6 @@
 
 include_once ("Transaccio.php");
 include_once (__DIR__ . "\\..\\dades\\FabricaControladorsDades.php");
-include_once ("IControladorEmergencia.php");
-include_once ("IControladorResident.php");
-include_once ("Caiguda.php");
-include_once ("Resident.php");
 
 
 class TxCreaCaiguda implements Transaccio {
