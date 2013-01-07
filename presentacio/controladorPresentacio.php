@@ -25,6 +25,7 @@ function cargarNotificaciones(){
 	<table class="tablaNotificaciones" border="0" cellspacing="0">
 		<tr>
 			<th>Tipus</th>
+			<th>Id Noti</th>
 			<th>Afectat</th>
 			<th>Cuidador</th>
 			<th>Data</th>
@@ -39,6 +40,7 @@ function cargarNotificaciones(){
 				else if( $n[$i][0] == 'caiguda' ) 	echo "<img title=\"Caiguda\" src=\"img/ico/caida20.png\"></img>";
 				else if( $n[$i][0] == 'tardanca' )	echo "<img title=\"Tarança\" src=\"img/ico/clock20.png\"></img>"; 
 			?></td>
+			<td><?php echo $n[$i][6]; ?></td>
 			<td class="tdAfectat"><?php echo $n[$i][1]; ?></td>
 			<td><?php echo $n[$i][2]; ?></td>
 			<td><?php echo $n[$i][3]; ?></td>
