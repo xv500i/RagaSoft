@@ -20,7 +20,7 @@ class TxObteTotsIdRfid implements Transaccio {
 	}
 	
 	public function obteResultat() {
-		return $ids;
+		return $this->ids;
 	}
 }
 
