@@ -8,10 +8,21 @@
 
 	
 
-	echo "Confirma Notificacio";
-	$txConf = new TxConfirmaNotificacio();
-	$txConf->modificaIdNotificacio(18);
-	$txConf->modificaTelefon(633768939);
-	$txConf->execu();
+	echo "Crear Incendi";
+	echo "<br>";
+	
+	$txin = new TxCreaIncedi();
+	$txin->modificaUsuari("PisBarriAntic");
+	$txin->execu();
+	$i = $txin->obteResultat();
+	
+	echo "crear notificacio";
+	echo "<br>";
+	
+	$txnot = new TxNotifica();
+	$txnot->modificaEmergencia($i);
+	$txnot->execu();
+	
+	
 
 ?>

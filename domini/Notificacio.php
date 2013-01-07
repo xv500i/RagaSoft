@@ -59,6 +59,13 @@ class Notificacio {
 	public function modificaEmergencia($e) {
 		$this->emergencia = $e;
 	}
+	
+	public function enviaSMS($t, $m) {
+		$sl = ServiceLocator::getInstance();
+		$ase = $sl->troba("ServeiSMS");
+		$ase->enviaSMS($t, $m);	
+	}
+	
 
 	public function confirma($telf1) {
 		$telf2 = $this->cuidador->obteTelefon();
@@ -74,12 +81,7 @@ class Notificacio {
 		}
 	}
 	
-	public function enviaSMS($t, $m) {
-		$sl = ServiceLocator::getInstance();
-		$ase = $sl->troba("ServeiSMS");
-		$ase->enviaSMS($t, $m);	
-	}
-	
+
 	public function enviaNotificacioAlServeiDeEmergencies() {
 		$mis = $this->emergencia->obteMissatge();
 		$con = Contactes::getInstance();
@@ -100,9 +102,12 @@ class Notificacio {
 	public function notifica() {
 		$m = $this->emergencia->obteMissatge();
 		$t = $this->cuidador->obteTelefon();
-		//enviaSMS($t,$m);
+		//this->enviaSMS($t,$m);
 		$s = $this->emergencia->obtePeriodeDeConfirmacio();
-		//sleep($s); //falta saver som es fa el timer
+		
+		//exec ('script.php');
+		
+		
 		$this->callBackTimerNotificacio();
 	}
 }
