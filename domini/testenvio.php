@@ -13,9 +13,9 @@ $variables=array(
 );
 */
 $variables=array(
-"Remitente"=>"Remitente",  //Remitente que aparece, puede ser n�mero de m�vil o texto (hasta 11 caracteres)
-"Destinatarios"=>"34696396699", // Destinatarios del mensaje, si es m�s de 1 sep�relos por punto y coma
-"Mensaje"=>"Si llegeixes aixo ja funciona", //Mensaje, si se env�an m�s de 160 caracteres se enviar� en varios mensajes
+"Remitente"=>"Ragasoft",  //Remitente que aparece, puede ser n�mero de m�vil o texto (hasta 11 caracteres)
+"Destinatarios"=>"34653057550", // Destinatarios del mensaje, si es m�s de 1 sep�relos por punto y coma
+"Mensaje"=>"S'ha detectat un incendi a CasaPuig(Carrer Gerenal Tapioca n60 2n 2a)", //Mensaje, si se env�an m�s de 160 caracteres se enviar� en varios mensajes
 "Flash"=>0, // Formato Flash 
 "Report"=>0,  //Report de entrega al correo electr�nico por defecto
 "Descuento"=>0 // Si utiliza descuento o no
