@@ -67,6 +67,26 @@ class Notificacio {
 	}
 	
 
+	public function deQueEts() {
+		return $this->emergencia->queEts();
+	}
+	
+	public function obteMoment() {
+		return $this->emergencia->obteMoment();
+	}
+	
+	public function obtePeriode() {
+		return $this->emergencia->obtePeriodeDeConfirmacio();
+	}
+	
+	public function obteAfectat() {
+		return $this->emergencia->obteAfectat();
+	}
+	
+	public function obteTelefonCuidador() {
+		return $this->cuidador->obteTelefon();
+	}
+	
 	public function confirma($telf1) {
 		$telf2 = $this->cuidador->obteTelefon();
 		if($telf1 == $telf2) {

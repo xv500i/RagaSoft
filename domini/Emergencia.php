@@ -19,6 +19,8 @@ abstract class Emergencia {
 		$this->moment = $m;
 	}
 
+	abstract public function queEts();
+	abstract public function obteAfectat();
 	abstract public function obteCuidador();
 	abstract public function obteMissatge();
 	abstract public function obtePeriodeDeConfirmacio();

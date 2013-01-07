@@ -12,6 +12,10 @@ class Incendi extends Emergencia {
 		return $this->llar->obteCuidadorDeGuardia();
 	}
 	
+	public function obteAfectat() {
+		return $this->llar->obteUsuari();
+	}
+	
 	public function obtePeriodeDeConfirmacio() {
 		return $this->llar->obtePeriodeDeConfirmacio();
 	}
@@ -26,6 +30,10 @@ class Incendi extends Emergencia {
 	
 	public function modificaLLar($Llar) {
 		$this->llar = $Llar;
+	}
+	
+	public function queEts() {
+		return 'incendi';
 	}
 }
 

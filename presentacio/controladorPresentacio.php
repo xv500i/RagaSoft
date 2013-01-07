@@ -158,7 +158,7 @@ function controladorDomini_cargaNotificacions(){
 	// Los campos deben ser: ( tipus, idRfid, nomResidentAfectat, moment, periodeConfirmacio, confirmada, id )
 	
 	
-	$nPendents= array( array("incendi", 123 , 'Leo Messi',			'3-1-2013 16:56', '10', false, 1 ),
+	/*$nPendents= array( array("incendi", 123 , 'Leo Messi',			'3-1-2013 16:56', '10', false, 1 ),
 				array("caiguda", 123 , 'Cristiano Ronaldo', 		'14-2-2013 16:56', '60', false, 2 ),
 				array("tardanca", 123 , 'Pepe', 					'3-3-2013 00:00', '5', false, 3 ),
 				array("tardanca", 123 , 'Felipe VII', 				'1-4-2013 16:56', '15', false, 4 ),
@@ -197,7 +197,14 @@ function controladorDomini_cargaNotificacions(){
 				array("caiguda", 123 , 'Jaimito Tito', 				'33-10-2013 16:56', '10', true, 34 )
 			);
 	
-	return array_merge($nPendents, $nConfirmades);
+	return array_merge($nPendents, $nConfirmades);*/
+	include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCarregaNotis.php");
+
+	$tx = new TxCarregaNotis();
+	$tx->execu();
+	$res = $tx->obteResultat();
+	
+	return $res;
 }
 
 
