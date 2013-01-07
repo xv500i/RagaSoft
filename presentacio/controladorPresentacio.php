@@ -115,16 +115,27 @@ function controladorDomini_creaNotificacio( $tipus ){
 	switch ($tipus) {
 		case "incendi":
 			$tx = new TxCreaIncedi();
-			// FIXME: obtenir usuari de la sessio o demanar-lo en un select camp
-			//$tx->modificaUsuari();
+			$tu = new TxObteTotsUsuaris();
+			$tu->execu();
+			$usuariAleatori = array_rand($tu->obteResultat());
+			$tx->modificaUsuari($usuariAleatori);
+			$tx->execu();
 			break;
 		case "tardanca":
 			$tx = new TxCreaTardanca();
-			// FIXME: obtenir usuari
+			$tu = new TxObteTotsIdRfid();
+			$tu->execu();
+			$idRfidAleatori = array_rand($tu->obteResultat());
+			$tx->modificaIdResident($idRfidAleatori);
+			$tx->execu();
 			break;
 		case "caiguda":
 			$tx = new TxCreaCaiguda();
-			// FIXME: obtenir usuari
+			$tu = new TxObteTotsIdRfid();
+			$tu->execu();
+			$idRfidAleatori = array_rand($tu->obteResultat());
+			$tx->modificaIdResident($idRfidAleatori);
+			$tx->execu();
 			break;
 	}
 	
