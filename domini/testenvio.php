@@ -1,26 +1,36 @@
 <?
 require_once("mensatek.inc");
 // Crear instancia Clase
-$Mensatek=new cMensatek("su correo registrado en MENSATEK.COM","Su contraseña");
+$Mensatek=new cMensatek("xv500i@gmail.com","ragasoft");
+/*
 $variables=array(
-"Remitente"=>"Remitente",  //Remitente que aparece, puede ser número de móvil o texto (hasta 11 caracteres)
-"Destinatarios"=>"34600000000", // Destinatarios del mensaje, si es más de 1 sepárelos por punto y coma
-"Mensaje"=>"Su mensaje de prueba.", //Mensaje, si se envían más de 160 caracteres se enviará en varios mensajes
+"Remitente"=>"Remitente",  //Remitente que aparece, puede ser nï¿½mero de mï¿½vil o texto (hasta 11 caracteres)
+"Destinatarios"=>"34600000000", // Destinatarios del mensaje, si es mï¿½s de 1 sepï¿½relos por punto y coma
+"Mensaje"=>"Su mensaje de prueba.", //Mensaje, si se envï¿½an mï¿½s de 160 caracteres se enviarï¿½ en varios mensajes
 "Flash"=>0, // Formato Flash 
-"Report"=>1,  //Report de entrega al correo electrónico por defecto
+"Report"=>1,  //Report de entrega al correo electrï¿½nico por defecto
+"Descuento"=>0 // Si utiliza descuento o no
+);
+*/
+$variables=array(
+"Remitente"=>"Remitente",  //Remitente que aparece, puede ser nï¿½mero de mï¿½vil o texto (hasta 11 caracteres)
+"Destinatarios"=>"34696396699", // Destinatarios del mensaje, si es mï¿½s de 1 sepï¿½relos por punto y coma
+"Mensaje"=>"Si llegeixes aixo ja funciona", //Mensaje, si se envï¿½an mï¿½s de 160 caracteres se enviarï¿½ en varios mensajes
+"Flash"=>0, // Formato Flash 
+"Report"=>1,  //Report de entrega al correo electrï¿½nico por defecto
 "Descuento"=>0 // Si utiliza descuento o no
 );
 
 
-// Ejemplo de envío
+// Ejemplo de envï¿½o
 $res=$Mensatek->enviar($variables);
 echo "<br>Se enviaron ".$res["Res"]." mensajes y le restan ".$res["Cred"]." cr&eacute;ditos";
 
-// Ejemplo de obtendión directa de créditos restantes en su cuenta
+// Ejemplo de obtendiï¿½n directa de crï¿½ditos restantes en su cuenta
 echo "<br>Le restan ".$Mensatek->creditos()." cr&eacute;ditos";
 
 
-// Ejemplo de obtención de reports de envío
+// Ejemplo de obtenciï¿½n de reports de envï¿½o
 /*
 echo "<br>N&uacute;mero de reports en el mensaje:".$Mensatek->report($res["Msgid"]);
 foreach ($Mensatek->Res as $res) echo "<br>Mensaje enviado en ".$res["Fecha"]." al tel&eacute;fono ".$res["Movil"]." lleg&oacute; en ".$res["Tiempo"]." segundos";
