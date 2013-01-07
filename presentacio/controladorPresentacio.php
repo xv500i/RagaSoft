@@ -103,11 +103,13 @@ function simular(){
  **********************************************************************************************************************/
  
 function controladorDomini_creaNotificacio( $tipus ){
+	return true;
 	include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaCaiguda.php");
 	include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaIncendi.php");
 	include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaTardanca.php");
 	include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxNotifica.php");
-			
+	include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxObteTotsUsuaris.php");
+	include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxObteTotsIdRfid.php");	
 	// El parametro $tipus es el tipo de notificación que se generará,
 	// Los demás parámetros que se necesitan para generar una notificación se harán desde dominio,
 	// Como por ejemplo calcular la hora en que se produce, etc...
