@@ -1,35 +1,25 @@
 <?php
 
 include_once ("Transaccio.php");
-include_once (__DIR__ . "\\..\\dades\\FabricaControladorsDades.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "dades" . DIRECTORY_SEPARATOR . "DB.php");
 
 
-class TxCarregaNotis implements Transaccio {
+class TxModificaTelefonTest implements Transaccio {
 	
 	private $resultat;
+	private $telefon;
 	
 	public function execu() {
-		$ContDades = FabricaControladorsDades::getInstance();
-		$CN = $ContDades->getIControladorNotificacio();
-		$ns = $CN->tots();
-		$result = array();
-		foreach ($ns as $n) {
-    		$tipus = $n->deQueEts();
-			$afectat = $n->obteAfectat();
-			$telf = $n->obteTelefonCuidador();
-			$mom = $n->obteMoment();
-			$per = $n->obtePeriode();
-			$con = $n->obteConfirmada();
-			$id = $n->obteId();
-			$epc = $n->obteEsPotConfirmar();
-			$res = array($tipus, $afectat, $telf, $mom, $per, $con, $id, $epc);
-			$result[] = $res;
-		}
-		$this->resultat = $result;
+		DB::executeQuery("UPDATE cuidador SET telefon = '" . $this->telefon . "' WHERE nom = 'test';");
+		$this->resultat = TRUE;
 	}
 
 	public function obteResultat() {
 		return $this->resultat;
+	}
+	
+	public function modificaTelefon($tel) {
+		$this->telefon = $tel;
 	}
 }
 
