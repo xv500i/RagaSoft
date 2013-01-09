@@ -22,7 +22,7 @@
 						<p class="pPasoSimulacion" id="idPaso4" >Simulació Finalitzada</p>
 						<div class="divBotonesSimulacion">
 							<a class="linkInicio" href="index.php">Inici</a>
-							<a class="linkSimular" id="idLinkSimular" name="caida" href="javascript:simular();">Simular</a>
+							<a class="linkSimular" id="idLinkSimular" name="caiguda" href="javascript:simular();">Simular</a>
 						</div>
 					</div>
 				</div>

@@ -1,6 +1,13 @@
 <?php
    	
 //@session_start();
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaCaiguda.php");
+	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaIncendi.php");
+	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaTardanca.php");
+	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxNotifica.php");
+	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxObteTotsUsuaris.php");
+	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxObteTotsIdRfid.php");	
+
 
 if( !isset( $_POST['peticion'] ) )	echo '<p>No existe peticion</p>';
 
@@ -100,17 +107,13 @@ function simular(){
 /**********************************************************************************************************************
  *  Las siguientes funciones deberian "migrarse" al controlador de domini o el patró transacció o algo por el estilo
  **********************************************************************************************************************/
- 
+
+		 
+  
 function controladorDomini_creaNotificacio( $tipus ){
 	
 	
-	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaCaiguda.php");
-	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaIncendi.php");
-	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaTardanca.php");
-	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxNotifica.php");
-	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxObteTotsUsuaris.php");
-	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxObteTotsIdRfid.php");	
-		
+	
 	// El parametro $tipus es el tipo de notificación que se generará,
 	// Los demás parámetros que se necesitan para generar una notificación se harán desde dominio,
 	// Como por ejemplo calcular la hora en que se produce, etc...
@@ -148,7 +151,7 @@ function controladorDomini_creaNotificacio( $tipus ){
 			$e = $tx->obteResultat();
 			break;
 	}
-	if (!$e) return false;
+	if ($e == NULL) return false;
 	$tn = new TxNotifica();
 	$tn->modificaEmergencia($e);
 	$tn->execu();

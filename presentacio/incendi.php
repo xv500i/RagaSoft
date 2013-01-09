@@ -24,7 +24,7 @@
 						<p class="pPasoSimulacion" id="idPaso4" >Simulació Finalitzada</p>
 						<div class="divBotonesSimulacion">
 							<a class="linkInicio" href="index.php">Inici</a>
-							<a class="linkSimular" id="idLinkSimular" name="incendio" href="javascript:simular();">Simular</a>
+							<a class="linkSimular" id="idLinkSimular" name="incendi" href="javascript:simular();">Simular</a>
 						</div>
 					</div>
 				</div>
