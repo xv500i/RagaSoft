@@ -165,7 +165,7 @@ function controladorDomini_confirmaNotificacio($id, $telefon){
 	include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxConfirmaNotificacio.php");
 	
 	//FIXME: necesita el telefono del cuidador y el id de la notificacion
-	
+	//OVELLATOR_FIXME:
 	//FIXME: Esta función debería devolver:
 	//FIXME: OK si se ha realizado correctamente el UPDATE de la notificacion y su estado ha pasado a Confirmada
 	//FIXME: ERROR si ha habido algún problema
