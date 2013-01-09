@@ -57,14 +57,14 @@ class ControladorNotificacio implements IControladorNotificacio {
 		$id = $notificacio->obteId();
 		$c = ($notificacio->obteConfirmada() ? "true": "false");
 		$epc = ($notificacio->obteEsPotconfirmar() ? "true": "false");
-		$uq = "UPDATE NOTIFICACIO SET confirmada=" . $c . ", esPotConfirmar=" . $epc . " WHERE id='" . $id . "';";
+		$uq = "UPDATE notificacio SET confirmada=" . $c . ", esPotConfirmar=" . $epc . " WHERE id='" . $id . "';";
 		DB::executeQuery($uq);
 	}
 	
 	public function creaNotificacio($emergencia, $cuidador) {
 		$momentEmergencia = $emergencia->obteMoment();
 		$idCuidador = $cuidador->obteTelefon();
-		$iq = "INSERT INTO NOTIFICACIO (idCuidador, momentEmergencia, confirmada, esPotConfirmar) VALUES('?1','?2',false,true)";
+		$iq = "INSERT INTO notificacio (idCuidador, momentEmergencia, confirmada, esPotConfirmar) VALUES('?1','?2',false,true)";
 		$iq = str_replace("?1", $idCuidador, $iq);
 		$iq = str_replace("?2", $momentEmergencia, $iq);
 		DB::executeQuery($iq);

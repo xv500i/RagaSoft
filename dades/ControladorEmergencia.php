@@ -78,7 +78,7 @@ class ControladorEmergencia implements IControladorEmergencia {
 	public function creaIncendi($Llar) {
 		date_default_timezone_set('Europe/Madrid');
 		$date = date('Y-m-d H:i:s', time());
-		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES ('?1','Incendi','?3',NULL);";
+		$iq = "INSERT INTO emergencia (moment, tipus, usuariLlar, idRfidResident) VALUES ('?1','Incendi','?3',NULL);";
 		$iq = str_replace("?1", $date, $iq);
 		$iq = str_replace("?3", $Llar->obteUsuari(), $iq);
 		DB::executeQuery($iq);
@@ -91,7 +91,7 @@ class ControladorEmergencia implements IControladorEmergencia {
 	public function creaTardanca($resident) {
 		date_default_timezone_set('Europe/Madrid');
 		$date = date('Y-m-d H:i:s', time());
-		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES ('?1','Tardanca',NULL,'?4');";
+		$iq = "INSERT INTO emergencia (moment, tipus, usuariLlar, idRfidResident) VALUES ('?1','Tardanca',NULL,'?4');";
 		$iq = str_replace("?1", $date, $iq);
 		$iq = str_replace("?4", $resident->obteIdRfid(), $iq);
 		DB::executeQuery($iq);
@@ -104,7 +104,7 @@ class ControladorEmergencia implements IControladorEmergencia {
 	public function creaCaiguda($resident) {
 		date_default_timezone_set('Europe/Madrid');
 		$date = date('Y-m-d H:i:s', time());
-		$iq = "INSERT INTO EMERGENCIA (moment, tipus, usuariLlar, idRfidResident) VALUES ('?1','Caiguda',NULL,'?4');";
+		$iq = "INSERT INTO emergencia (moment, tipus, usuariLlar, idRfidResident) VALUES ('?1','Caiguda',NULL,'?4');";
 		$iq = str_replace("?1", $date, $iq);
 		$iq = str_replace("?4", $resident->obteIdRfid(), $iq);
 		DB::executeQuery($iq);
