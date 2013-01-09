@@ -1,7 +1,7 @@
 <?php
 
 include_once ("Transaccio.php");
-include_once (__DIR__ . "\\..\\dades\\FabricaControladorsDades.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "dades" . DIRECTORY_SEPARATOR . "FabricaControladorsDades.php");
 
 
 class TxCreaCaiguda implements Transaccio {
