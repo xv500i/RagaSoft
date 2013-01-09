@@ -1,10 +1,10 @@
 <?php
 class DB {
 	
-	private static $user="alex";
-	private static $password="";
-	private static $database="test";
-	private static $location = "localhost:3306";
+	private static $user="progr724_Rsoft";
+	private static $password="ragasoft";
+	private static $database="progr724_ragasoft";
+	private static $location = "localhost:2082";
 
 	public static function executeQuery($query) {
 		mysql_connect(self::$location, self::$user, self::$password);
