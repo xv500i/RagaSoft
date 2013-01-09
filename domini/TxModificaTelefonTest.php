@@ -10,7 +10,7 @@ class TxModificaTelefonTest implements Transaccio {
 	private $telefon;
 	
 	public function execu() {
-		DB::executeQuery("UPDATE cuidador SET telefon = '" . $this->telefon . "' WHERE nom = 'test';");
+		DB::executeQuery("UPDATE cuidador SET telefon = '" . $this->telefon . "' WHERE nom = 'cuidador_test';");
 		$this->resultat = TRUE;
 	}
 
