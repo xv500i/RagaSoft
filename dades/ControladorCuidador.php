@@ -6,8 +6,8 @@ include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domi
 
 class ControladorCuidador implements IControladorCuidador {
 	
-    private static $querySelectAbstract = "SELECT * FROM CUIDADOR WHERE telefon = '?1';";
-	private static $querySelectAll = "SELECT * FROM CUIDADOR;";	
+    private static $querySelectAbstract = "SELECT * FROM cuidador WHERE telefon = '?1';";
+	private static $querySelectAll = "SELECT * FROM cuidador;";	
 		
     public function obte($telefon) {
     	$query = str_replace("?1", $telefon, self::$querySelectAbstract);

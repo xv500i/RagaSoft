@@ -7,8 +7,8 @@ include_once ("DB.php");
 
 class ControladorContactes implements IControladorContactes {
 	
-    private static $querySelectAbstract = "SELECT * FROM CONTACTES WHERE telefon = '?1';";
-	private static $querySelectAll = "SELECT * FROM CONTACTES;";
+    private static $querySelectAbstract = "SELECT * FROM contactes WHERE telefon = '?1';";
+	private static $querySelectAll = "SELECT * FROM contactes;";
 		
     public function obte($telefon) {
     	$query = str_replace("?1", $telefon, self::$querySelectAbstract);

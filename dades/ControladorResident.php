@@ -7,8 +7,8 @@ include_once ("FabricaControladorsDades.php");
 
 class ControladorResident implements IControladorResident {
 	
-    private static $querySelectAbstract = "SELECT * FROM RESIDENT WHERE idRfid = '?1';";
-	private static $querySelectAll = "SELECT * FROM RESIDENT;";	
+    private static $querySelectAbstract = "SELECT * FROM resident WHERE idRfid = '?1';";
+	private static $querySelectAll = "SELECT * FROM resident;";	
 		
     public function obte($usuari) {
     	$query = str_replace("?1", $usuari, self::$querySelectAbstract);

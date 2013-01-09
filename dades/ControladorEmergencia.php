@@ -9,8 +9,8 @@ include_once ("FabricaControladorsDades.php");
 
 class ControladorEmergencia implements IControladorEmergencia {
 	
-    private static $querySelectAbstract = "SELECT * FROM EMERGENCIA WHERE moment = '?1';";
-	private static $querySelectAll = "SELECT * FROM EMERGENCIA order by moment desc;";
+    private static $querySelectAbstract = "SELECT * FROM emergencia WHERE moment = '?1';";
+	private static $querySelectAll = "SELECT * FROM emergencia order by moment desc;";
 		
     public function obte($moment) {
     	$query = str_replace("?1", $moment, self::$querySelectAbstract);
