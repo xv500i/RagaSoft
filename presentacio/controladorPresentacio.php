@@ -2,11 +2,12 @@
    	
 //@session_start();
 require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaCaiguda.php");
-	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaIncendi.php");
-	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaTardanca.php");
-	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxNotifica.php");
-	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxObteTotsUsuaris.php");
-	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxObteTotsIdRfid.php");	
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaIncendi.php");
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaTardanca.php");
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxNotifica.php");
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxObteTotsUsuaris.php");
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxObteTotsIdRfid.php");
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxModificaTelefonTest.php");	
 
 
 if( !isset( $_POST['peticion'] ) )	echo '<p>No existeix petició</p>';
@@ -110,8 +111,10 @@ function simular(){
   
 function controladorDomini_creaNotificacio( $tipus, $telefon ){
 	
-	//FIXME: ja esta dispoible el telefon com a parametre
-	
+	//FIXED: ja esta dispoible el telefon com a parametre
+	$trans = new TxModificaTelefonTest();
+	$trans->modificaTelefon($telefon);
+	$trans->execu();
 	// El parametro $tipus es el tipo de notificación que se generará,
 	// Los demás parámetros que se necesitan para generar una notificación se harán desde dominio,
 	// Como por ejemplo calcular la hora en que se produce, etc...

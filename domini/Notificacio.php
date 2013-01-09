@@ -130,7 +130,7 @@ class Notificacio {
 		//exec ('script.php');
 		
 		
-		$this->callBackTimerNotificacio();
+		//$this->callBackTimerNotificacio();
 	}
 }
 
