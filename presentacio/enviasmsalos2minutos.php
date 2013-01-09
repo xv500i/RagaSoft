@@ -12,7 +12,7 @@ $variables=array(
 "Descuento"=>0 // Si utiliza descuento o no
 );
 
-echo "kdaskdsa";
+echo "potototo";
 // Ejemplo de env�o
 sleep(10);
 $res=$Mensatek->enviar($variables);
