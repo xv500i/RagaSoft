@@ -21,6 +21,7 @@ class Incendi extends Emergencia {
 	}
 	
 	public function obteMissatge() {
+		//return "incendi";
 		return "Hi ha un incendi a la casa " . $this->llar->obteUsuari() . "(" . $this->llar->obteAdreca()  . ")";
 	}
 	
