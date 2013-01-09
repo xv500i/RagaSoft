@@ -171,10 +171,23 @@ function controladorDomini_confirmaNotificacio($id, $telefon){
 	//FIXME: ERROR si ha habido algún problema
 	//FIXME: ERROR_TELEFONO si no coincide el telefono introducido con el que se registro en el momento de generar la notificacion
 	
-	
-	//return "OK";
-	//return "ERROR";
-	return "ERROR_TELEFONO";
+	include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxConfirmaNotificacio.php");
+
+	$tx = new TxConfirmaNotificacio();
+	$tx->modificaIdNotificacio($id);
+	$tx->modificaTelefon($telefon);
+	try {
+		$tx->execu();
+	}
+	catch (Exception $e) {
+		if ($e->getMessage() == "No és una notificació teva") {
+			return "ERROR_TELEFONO";	
+		}
+		else {
+			return "ERROR";			
+		}
+	}
+	return "OK";
 }
 
 function controladorDomini_cargaNotificacions(){

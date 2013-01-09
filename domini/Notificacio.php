@@ -94,11 +94,13 @@ class Notificacio {
 				$this->esPotconfirmar = FALSE;
 				$this->confirmada = TRUE;
 			} else {
-				echo "No es pot confirmar";
-				echo "<br>";
-				//enviaSMS($telf2, "Aquesta notificació ja no es pot confirmar");
+				enviaSMS($telf2, "Aquesta notificació ja no es pot confirmar");
 			}
 		}
+		else {
+			throw new Exception("No és una notificació teva");
+		}
+		
 	}
 	
 
