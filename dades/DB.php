@@ -4,7 +4,7 @@ class DB {
 	private static $user="progr724_Rsoft";
 	private static $password="ragasoft";
 	private static $database="progr724_ragasoft";
-	private static $location = "localhost:2082";
+	private static $location = "localhost";
 
 	public static function executeQuery($query) {
 		mysql_connect(self::$location, self::$user, self::$password);
