@@ -5,7 +5,7 @@ echo "holaoeu";
 //include ("enviasmsalos2minutos.php");
 //echo "<br>" . var_dump($r);
 //echo exec("whoami");
-$r = new HttpRequest('http://kelbert.es/RagaSoft/presentacio/enviasmsalos2minutos.php', HttpRequest::METH_GET);
+$r = new HttpRequest('http://localhost/rfid/presentacio/enviasmsalos2minutos.php', HttpRequest);
 echo "blaa";
 try {
     echo "<br>" . $r->send();
