@@ -23,8 +23,8 @@ $variables=array(
 
 
 // Ejemplo de env�o
-//$res=$Mensatek->enviar($variables);
-//echo "<br>Se enviaron ".$res["Res"]." mensajes y le restan ".$res["Cred"]." cr&eacute;ditos";
+$res=$Mensatek->enviar($variables);
+echo "<br>Se enviaron ".$res["Res"]." mensajes y le restan ".$res["Cred"]." cr&eacute;ditos";
 
 // Ejemplo de obtendi�n directa de cr�ditos restantes en su cuenta
 echo "<br>Le restan ".$Mensatek->creditos()." cr&eacute;ditos";
