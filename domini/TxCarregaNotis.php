@@ -23,7 +23,8 @@ class TxCarregaNotis implements Transaccio {
 			$per = $n->obtePeriode();
 			$con = $n->obteConfirmada();
 			$id = $n->obteId();
-			$res = array($tipus, $afectat, $telf, $mom, $per, $con, $id);
+			$epc = $n->obteEsPotConfirmar();
+			$res = array($tipus, $afectat, $telf, $mom, $per, $con, $id, $epc);
 			$result[] = $res;
 		}
 		$this->resultat = $result;
