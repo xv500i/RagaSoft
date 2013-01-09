@@ -31,6 +31,6 @@ mysql_connect("localhost", "alex", "") or die(mysql_error());
 echo "Connected to MySQL<br />";
 mysql_select_db("test") or die(mysql_error());
 echo "Connected to Database";
-$result = mysql_query("SELECT * FROM RESIDENT;");
+$result = mysql_query("SELECT * FROM resident;");
 displayRows($result);
 ?>
