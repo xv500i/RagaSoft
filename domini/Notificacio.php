@@ -3,7 +3,7 @@
 include_once ("Cuidador.php");
 include_once ("ServiceLocator.php");
 include_once ("IAdaptadorServeiEmergencies.php");
-include_once (__DIR__ . "\\..\\dades\\FabricaControladorsDades.php");
+include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "dades" . DIRECTORY_SEPARATOR . "FabricaControladorsDades.php");
 include_once ("IControladorNotificacio.php");
 include_once ("Contactes.php");
 include_once ("Emergencia.php");
