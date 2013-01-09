@@ -124,7 +124,7 @@ class Notificacio {
 	public function notifica() {
 		$m = $this->emergencia->obteMissatge();
 		$t = $this->cuidador->obteTelefon();
-		//this->enviaSMS($t,$m);
+		$this->enviaSMS($t,$m);
 		$s = $this->emergencia->obtePeriodeDeConfirmacio();
 		
 		//exec ('script.php');
