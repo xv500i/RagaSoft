@@ -27,9 +27,9 @@ function displayRows($mysqlresult) {
 	echo "</table>";
 }
 
-mysql_connect("localhost", "alex", "") or die(mysql_error());
+mysql_connect("localhost", "progr724_Rsoft", "ragasoft") or die(mysql_error());
 echo "Connected to MySQL<br />";
-mysql_select_db("test") or die(mysql_error());
+mysql_select_db("progr724_ragasoft") or die(mysql_error());
 echo "Connected to Database";
 $result = mysql_query("SELECT * FROM RESIDENT;");
 displayRows($result);
