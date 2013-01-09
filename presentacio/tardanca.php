@@ -13,7 +13,7 @@
 					<div class="divContenido" id="idContenidoTardanza">
 						<div class="divInfoSimulacion">
 							<img title="info Incendi" src="img/clocks64.png" />
-							<p>Aquest event simula la tardança d'un hipotètic usuari del sistema.<br />
+							<p>Aquest esdeveniment simula la tardança d'un hipotètic usuari del sistema.<br />
 								Una tardança es produeix cuan s'ha programat una hora en la que l'usuari ja es trobarà a la seva vivenda, però arriba aquesta hora i el sistema (mitjançant la tecnología RFID) no detecta la presència de l'usuari a la seva llar.</p>
 						</div>
 						<p class="pPasoSimulacion" id="idPaso1" >Tardança Detectada</p>

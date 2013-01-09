@@ -13,7 +13,7 @@
 					<div class="divContenido" id="idContenidoCaida">
 						<div class="divInfoSimulacion">
 							<img title="info Incendi" src="img/caidas64.png" />
-							<p>Aquest event simula la caiguda d'un hipotètic usuari.<br />
+							<p>Aquest esdeveniment simula la caiguda d'un hipotètic usuari.<br />
 								Una caiguda es detecta mitjançant un sensor al dispositiu que porta penjat l'usuari. Aquest sensor s'activa cuan es detecta un moviment brusc, i aixó fa que s'enviï una senyal al sistema, i aquet realizarà els corresponents passos.</p>
 						</div>
 						<p class="pPasoSimulacion" id="idPaso1" >Caiguda Detectada</p>

@@ -20,8 +20,10 @@
 							<li>Simulacions de caigudes</li>
 							<li>Simulacions de tardançes</li>
 						</ul>
-						<p>Per <b><i>executar</i></b> aquestes simulacions has de seleccionar l'opció desitjada al menú superior de l'aplicació o bé des de la pàgina d'inici.</p>
-						<p>Per <b><i>consultar</i></b> les notificaciones generades, has d'accedir a l'apartat <i>"notificacions"</i>.</p><br />
+						<p><big><b>Instruccions</b></big></p><br />
+						<p><b><i>1. </i></b>Per <b><i>executar</i></b> aquestes simulacions has de seleccionar l'opció desitjada al <i>menú superior</i> de l'aplicació o bé des de la pàgina d'inici. Un cop pitjat el botó <b><i>Simular</i></b> s'ha dintroduir el telèfon al qual es vol rebre la notificació de l'esdeveniment, que representarà el telèfon del cuidador de guàrdia.</p><br />
+						<p><b><i>2. </i></b>Per <b><i>consultar</i></b> les notificaciones del sistema, has d'accedir a l'apartat <i>"notificacions"</i>.</p><br />
+						<p><b><i>3. </i></b>Per <b><i>confirmar</i></b> les notificaciones generades, has d'accedir a l'apartat <i>"notificacions"</i> i pitjar el botó <b><i>confirmar</i></b> de la notificació desitjada. El sitema demanarà el telèfon que es va introduir en el moment de simular l'esdeveniment ( representa el telèfon del cuidador ) i si es correcte, la notificació es confirmarà èxit.</p><br />
 						<p><big><b>Llicència</b></big></p><br />
 						<p>Open Source</p><br />
 						<p><big><b>Versió</b></big></p><br />

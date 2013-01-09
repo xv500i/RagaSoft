@@ -13,7 +13,7 @@
 					<div class="divContenido" id="idContenidoIncendio">
 						<div class="divInfoSimulacion">
 							<img title="info Incendi" src="img/fireHouse.png" />
-							<p>Aquest event simula un incendi a la vivenda d'un hipotètic usuari.<br />
+							<p>Aquest esdeveniment simula un incendi a la vivenda d'un hipotètic usuari.<br />
 								Un incendi es detectat pel corresponent detector instal·lat a la vivenda, aquest envía una senyal al sistema, que s'encarrega de gestionar la incidència.
 								Els passos que realitzaría el sistema son els indicats a continuació.
 							</p>
