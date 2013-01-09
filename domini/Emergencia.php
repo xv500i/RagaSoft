@@ -6,6 +6,7 @@ include_once ("Cuidador.php");
 include_once ("Notificacio.php");
 
 
+
 abstract class Emergencia {
 	
 	protected $moment;

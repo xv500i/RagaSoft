@@ -1,7 +1,7 @@
 <?php
 
 include_once ("IAdaptadorServeiEmergencies.php");
-
+require_once ("AdaptadorServeiEmergenciesWeb.php");
 class ServiceLocator {
 
 	private static $instance;
@@ -22,7 +22,7 @@ class ServiceLocator {
 	public function troba($text) {
 		if($text == "ServeiSMS") {
 			if ($this->AdaptadorServeiEmergencies == NULL) {
-				$this->AdaptadorServeiEmergencies = new AdaptadorServeiEmergencies();
+				$this->AdaptadorServeiEmergencies = new AdaptadorServeiEmergenciesWeb();
 			}
 			return $this->AdaptadorServeiEmergencies;
 		}
