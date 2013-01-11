@@ -1,7 +1,7 @@
 <?php
 
-include_once ("IControladorContactes.php");
-include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "dades" . DIRECTORY_SEPARATOR . "FabricaControladorsDades.php");
+require_once ("IControladorContactes.php");
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "dades" . DIRECTORY_SEPARATOR . "FabricaControladorsDades.php");
 
 class Contactes {
 

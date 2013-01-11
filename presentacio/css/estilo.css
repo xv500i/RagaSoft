@@ -523,6 +523,22 @@ a{
 	overflow: auto;
 }
 
+#idContenidoAyuda p{
+	text-align: justify;
+}
+
+.textoTab{
+	margin: 5px 0 0 40px;
+}
+
+.imgAbuelos{
+	float:right;
+	margin: 75px 10px 5px 20px;
+}
+
+.tituloApartado{
+	color: #990000;
+}
 
 /********************************************************************** LOCALIZACION */
 

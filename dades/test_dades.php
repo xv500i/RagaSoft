@@ -1,6 +1,6 @@
 <?php
-	include_once ("DB.php");
-	include_once ("FabricaControladorsDades.php");
+	require_once ("DB.php");
+	require_once ("FabricaControladorsDades.php");
 	
 	function displayRows($mysqlresult) {
 		$nr = mysql_num_rows($mysqlresult);

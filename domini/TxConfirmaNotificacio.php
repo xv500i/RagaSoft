@@ -1,9 +1,9 @@
 <?php
 
-include_once ("Transaccio.php");
-include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "dades" . DIRECTORY_SEPARATOR . "FabricaControladorsDades.php");
-include_once ("IControladorNotificacio.php");
-include_once ("Notificacio.php");
+require_once ("Transaccio.php");
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "dades" . DIRECTORY_SEPARATOR . "FabricaControladorsDades.php");
+require_once ("IControladorNotificacio.php");
+require_once ("Notificacio.php");
 
 
 class TxConfirmaNotificacio implements Transaccio {

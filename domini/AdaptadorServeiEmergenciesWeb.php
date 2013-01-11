@@ -1,7 +1,7 @@
 <?php
 
-include_once ("IAdaptadorServeiEmergencies.php");
-include_once ("ServeiSMS.php");
+require_once ("IAdaptadorServeiEmergencies.php");
+require_once ("ServeiSMS.php");
 
 
 

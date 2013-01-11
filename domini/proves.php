@@ -1,9 +1,9 @@
 <?php
-	include_once ("TxCreaIncendi.php");
-	include_once ("TxCreaCaiguda.php");
-	include_once ("TxCreaTardanca.php");
-	include_once ("TxNotifica.php");
-	include_once ("TxConfirmaNotificacio.php");
+	require_once ("TxCreaIncendi.php");
+	require_once ("TxCreaCaiguda.php");
+	require_once ("TxCreaTardanca.php");
+	require_once ("TxNotifica.php");
+	require_once ("TxConfirmaNotificacio.php");
 	
 
 	

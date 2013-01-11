@@ -1,7 +1,7 @@
 <?php
 
-include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorContactes.php");
-include_once ("DB.php");
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorContactes.php");
+//require_once ("DB.php");
 
 // NINGU FA SERVIR AQUESTA CLASSE
 

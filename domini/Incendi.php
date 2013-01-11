@@ -1,7 +1,7 @@
 <?php
 
-include_once("EmergenciaResident.php");
-include_once ("Llar.php");
+require_once("EmergenciaResident.php");
+require_once ("Llar.php");
 
 
 class Incendi extends Emergencia {

@@ -1,11 +1,11 @@
 <?php
 
-include_once ("ControladorResident.php");
-include_once ("ControladorEmergencia.php");
-include_once ("ControladorNotificacio.php");
-include_once ("ControladorCuidador.php");
-include_once ("ControladorLlar.php");
-include_once ("ControladorContactes.php");
+require_once ("ControladorResident.php");
+require_once ("ControladorEmergencia.php");
+require_once ("ControladorNotificacio.php");
+require_once ("ControladorCuidador.php");
+require_once ("ControladorLlar.php");
+require_once ("ControladorContactes.php");
 
 class FabricaControladorsDades {
 

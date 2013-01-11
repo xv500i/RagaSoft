@@ -1,6 +1,6 @@
 <?php
-	include_once("TxObteTotsIdRfid.php");
-	include_once("TxObteTotsUsuaris.php");
+	require_once("TxObteTotsIdRfid.php");
+	require_once("TxObteTotsUsuaris.php");
 	
 	$txUsuaris = new TxObteTotsUsuaris();
 	$txUsuaris->execu();

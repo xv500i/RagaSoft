@@ -1,6 +1,6 @@
 <?php
-	include_once ("DB.php");
-	include_once ("FabricaControladorsDades.php");
+	require_once ("DB.php");
+	require_once ("FabricaControladorsDades.php");
 	
 	$fabrica = FabricaControladorsDades::getInstance();
 	$cu = $fabrica->getIControladorLlar();

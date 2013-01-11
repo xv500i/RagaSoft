@@ -1,9 +1,9 @@
 <?php
 
-include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorResident.php");
-include_once ("DB.php");
-include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Resident.php");
-include_once ("FabricaControladorsDades.php");
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "IControladorResident.php");
+//require_once ("DB.php");
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "Resident.php");
+require_once ("FabricaControladorsDades.php");
 
 class ControladorResident implements IControladorResident {
 	

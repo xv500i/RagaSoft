@@ -1,6 +1,8 @@
 <?php
    	
 //@session_start();
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "dades" . DIRECTORY_SEPARATOR . "DB.php");
+
 require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaCaiguda.php");
 require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaIncendi.php");
 require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCreaTardanca.php");
@@ -8,6 +10,8 @@ require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domi
 require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxObteTotsUsuaris.php");
 require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxObteTotsIdRfid.php");
 require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxModificaTelefonTest.php");	
+	
+	
 
 
 if( !isset( $_POST['peticion'] ) )	echo '<p>No existeix petició</p>';
@@ -165,7 +169,7 @@ function controladorDomini_creaNotificacio( $tipus, $telefon ){
 
 function controladorDomini_confirmaNotificacio($id, $telefon){
 	
-	include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxConfirmaNotificacio.php");
+	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxConfirmaNotificacio.php");
 	
 	//FIXME: necesita el telefono del cuidador y el id de la notificacion
 	//OVELLATOR_FIXME:
@@ -174,7 +178,7 @@ function controladorDomini_confirmaNotificacio($id, $telefon){
 	//FIXME: ERROR si ha habido algún problema
 	//FIXME: ERROR_TELEFONO si no coincide el telefono introducido con el que se registro en el momento de generar la notificacion
 	
-	include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxConfirmaNotificacio.php");
+	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxConfirmaNotificacio.php");
 
 	$tx = new TxConfirmaNotificacio();
 	$tx->modificaIdNotificacio($id);
@@ -186,6 +190,7 @@ function controladorDomini_confirmaNotificacio($id, $telefon){
 		if ($e->getMessage() == "No és una notificació teva") {
 			return "ERROR_TELEFONO";	
 		}
+		else if( $e->getMessage() == "FORA_TEMPS" ) return "FORA_TEMPS";
 		else {
 			return "ERROR";			
 		}
@@ -245,8 +250,9 @@ function controladorDomini_cargaNotificacions(){
 			);
 	
 	return array_merge($nPendents, $nConfirmades);*/
-	include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCarregaNotis.php");
-
+	
+	require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "domini" . DIRECTORY_SEPARATOR . "TxCarregaNotis.php");
+	
 	$tx = new TxCarregaNotis();
 	$tx->execu();
 	$res = $tx->obteResultat();

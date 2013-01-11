@@ -55,8 +55,8 @@ class ControladorNotificacio implements IControladorNotificacio {
 	public function actualitza($notificacio) {
 		// FIXME: falta que el implementador del domini fagi les operacions
 		$id = $notificacio->obteId();
-		$c = ($notificacio->obteConfirmada() ? "1": "0");
-		$epc = ($notificacio->obteEsPotconfirmar() ? "1": "0");
+		$c = ($notificacio->obteConfirmada() ? "true": "false");
+		$epc = ($notificacio->obteEsPotconfirmar() ? "true": "false");
 		$uq = "UPDATE notificacio SET confirmada=" . $c . ", esPotConfirmar=" . $epc . " WHERE id='" . $id . "';";
 		DB::executeQuery($uq);
 	}

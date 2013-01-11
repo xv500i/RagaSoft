@@ -201,11 +201,14 @@ this.cargaConfirmar = function(){
 				var docXml 		= xml.documentElement;
 				var resultado	= docXml.getElementsByTagName('resultado')[0];
 				
-				if( resultado.firstChild.data == 'OK') 	
+				if( typeof resultado !== "undefined" && resultado.firstChild.data == 'OK') 	
 						document.getElementById('idTdConfirmar'+ id).innerHTML = "<img title=\"Notificació Confirmada\" src=\"img/ico/tick.png\" />";
-				else if( resultado.firstChild.data == 'ERROR_TELEFONO'){ 
+				else if( typeof resultado !== "undefined" && resultado.firstChild.data == 'ERROR_TELEFONO'){ 
 						document.getElementById('idTdConfirmar'+ id).innerHTML = "<a class=\"linkConfirmar\" href=\"javascript:void(0)\" onclick=\"confirmar("+id+");\">Confirmar</a>";
 						alert('El telèfon introduit no està relacionat amb la notificació seleccionada.');
+				}
+				else if( typeof resultado !== "undefined" && resultado.firstChild.data == 'FORA_TEMPS'){ 
+						document.getElementById('idTdConfirmar'+ id).innerHTML = "<img title=\"Periode de confirmació vençut.\" src=\"img/ico/error.png\" />";
 				}
 				else 	document.getElementById('idTdConfirmar'+ id).innerHTML = "<img title=\"Error al corfirmar. Actualitza la pàgina i torna-ho a intentar.\" src=\"img/ico/error.png\" />";
 				

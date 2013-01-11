@@ -1,7 +1,7 @@
 <?php
 
-include_once("EmergenciaResident.php");
-include_once ("Resident.php");
+require_once("EmergenciaResident.php");
+require_once ("Resident.php");
 
 class Caiguda extends EmergenciaResident {
 	

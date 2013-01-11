@@ -1,6 +1,6 @@
 <?php
 
-include_once ("IAdaptadorServeiEmergencies.php");
+require_once ("IAdaptadorServeiEmergencies.php");
 require_once ("AdaptadorServeiEmergenciesWeb.php");
 class ServiceLocator {
 

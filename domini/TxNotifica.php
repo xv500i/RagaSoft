@@ -1,7 +1,7 @@
 <?php
 
-include_once ("Transaccio.php");
-include_once ("Emergencia.php");
+require_once ("Transaccio.php");
+require_once ("Emergencia.php");
 
 
 class TxNotifica implements Transaccio {

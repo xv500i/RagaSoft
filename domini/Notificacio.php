@@ -1,12 +1,12 @@
 <?php
 
-include_once ("Cuidador.php");
-include_once ("ServiceLocator.php");
-include_once ("IAdaptadorServeiEmergencies.php");
-include_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "dades" . DIRECTORY_SEPARATOR . "FabricaControladorsDades.php");
-include_once ("IControladorNotificacio.php");
-include_once ("Contactes.php");
-include_once ("Emergencia.php");
+require_once ("Cuidador.php");
+require_once ("ServiceLocator.php");
+require_once ("IAdaptadorServeiEmergencies.php");
+require_once (__DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "dades" . DIRECTORY_SEPARATOR . "FabricaControladorsDades.php");
+require_once ("IControladorNotificacio.php");
+require_once ("Contactes.php");
+require_once ("Emergencia.php");
 
 
 class Notificacio {
@@ -94,7 +94,8 @@ class Notificacio {
 				$this->esPotconfirmar = FALSE;
 				$this->confirmada = TRUE;
 			} else {
-				enviaSMS($telf2, "Aquesta notificació ja no es pot confirmar");
+				$this->enviaSMS($telf2, "Aquesta notificació ja no es pot confirmar");
+				throw new Exception("FORA_TEMPS");
 			}
 		}
 		else {

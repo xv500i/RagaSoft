@@ -1,6 +1,6 @@
 <?php
 
-include_once ("Cuidador.php");
+require_once ("Cuidador.php");
 
 class Llar {
 	private $adreca;

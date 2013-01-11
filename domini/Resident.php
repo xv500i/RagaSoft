@@ -1,5 +1,5 @@
 <?php
-include_once("Llar.php");
+require_once("Llar.php");
 
 class Resident {
 	
